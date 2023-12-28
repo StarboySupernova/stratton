@@ -41,7 +41,7 @@ function AuthorList({ data, pageContext }) {
         <AuthorGrid authors={authors} />
         {numberOfPages > 1 && (
           <Pagination
-            baseURL="/authors"
+            baseURL="/proprietors"
             currentPage={currentPage}
             numberOfPages={numberOfPages}
           />

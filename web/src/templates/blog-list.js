@@ -55,7 +55,7 @@ function Blogs({ data, pageContext }) {
             <Pagination
               currentPage={currentPage}
               numberOfPages={numberOfPages}
-              baseURL="/blogs"
+              baseURL="/restaurants"
             />
           )}
         </div>
