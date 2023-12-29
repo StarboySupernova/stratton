@@ -5,14 +5,14 @@ export const menu = [
   },
   {
     title: 'Restaurants',
-    path: '/blogs',
+    path: '/restaurants',
   },
   {
     title: 'Categories',
     path: '/categories',
   },
   {
-    title: 'Proprietors',
-    path: '/authors',
+    title: 'Restaurateurs',
+    path: '/restaurateurs',
   },
 ];

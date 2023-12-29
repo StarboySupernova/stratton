@@ -48,7 +48,7 @@ function Blogs({ data, pageContext }) {
         <div className="container">
           <PageHeader
             title="All Restaurants"
-            description="This month will bring about the 88th Academy Awards. Starting in 1928, this prestigious award ceremony..."
+            description="Savour the flavour, discover with Duke, the food sanctuary illustration..."
           />
           <BlogGrid blogs={blogs} />
           {numberOfPages > 1 && (

@@ -27,8 +27,10 @@ function TopCategories() {
     <TopCategoriesStyles>
       <SectionTitle>Top Categories</SectionTitle>
       <ParagraphText className="info">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae veniam
-        fuga minima.
+        Elevate your business in the digital age with our cutting-edge tech
+        solutions! Create your success story today! Our revolutionary software
+        wiil create a unified experience for yourself, and most importantly, for
+        your clients
       </ParagraphText>
       <CategoryGrid categories={categories} />
     </TopCategoriesStyles>

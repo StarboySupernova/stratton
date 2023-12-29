@@ -36,7 +36,7 @@ function Categories({ data, pageContext }) {
         <div className="container">
           <PageHeader
             title="All Categories"
-            description="This month will bring about the 88th Academy Awards. Starting in 1928, this prestigious award ceremony..."
+            description="Food offerings, designed with you in mind. As a black-owned startup, we are driven by a vision to revolutionize the industry while promoting diversity and inclusivity. All your favorites can be found here, from halaal to vegan choice, and everything else in-between"
           />
           <CategoryGrid categories={categories} />
           {numberOfPages > 1 && (

@@ -54,7 +54,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // creating single blog pages
   blogs.forEach((blog) => {
     createPage({
-      path: `/blogs/${blog.slug.current}`,
+      path: `/restaurants/${blog.slug.current}`,
       component: singleBlogTemplate, // component path
       context: { id: blog.id },
     });
@@ -72,7 +72,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // single Author pages
   authors.forEach((author) => {
     createPage({
-      path: `/authors/${author.slug.current}`,
+      path: `/restaurateurs/${author.slug.current}`,
       component: singleAuthorTemplate,
       context: { id: author.id },
     });
@@ -112,7 +112,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const totalAuthorListPages = Math.ceil(authors.length / postsPerPage);
   Array.from({ length: totalAuthorListPages }).forEach((_, index) => {
     createPage({
-      path: index === 0 ? `/proprietors` : `/proprietors/${index + 1}`,
+      path: index === 0 ? `/restaurateurs` : `/restaurateurs/${index + 1}`,
       component: authorListTemplate,
       context: {
         limit: postsPerPage,

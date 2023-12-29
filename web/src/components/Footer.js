@@ -12,10 +12,13 @@ function Footer() {
       <div className="container">
         <Logo />
         <ParagraphText className="footer__text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat neque
-          commodi perspiciatis quibusdam delectus voluptas ab eos natus laborum!
-          Veritatis, facilis modi. Ex, adipisci. Ab, atque. Debitis officia qui
-          vero!
+          Duke's flagship product is a cutting-edge iOS application designed to
+          streamline the process of making reservations and ordering at
+          restaurants. Unlike traditional reservation apps, Duke goes beyond the
+          functional aspect and focuses on enhancing the overall dining
+          experience. Our software leverages advanced algorithms and user
+          preferences to recommend personalized dining options, curating
+          unforgettable moments for our clients.
         </ParagraphText>
         <ul className="footer__menuList">
           {menu.map((item) => (
