@@ -74,7 +74,7 @@ function SingleBlog({ data }) {
             </ParagraphText>
             <ParagraphText className="author">
               <FiUser />
-              <Link to={`/authors/${blog.author.slug.current}`}>
+              <Link to={`/restaurateur/${blog.author.slug.current}`}>
                 {blog.author.name}
               </Link>
             </ParagraphText>

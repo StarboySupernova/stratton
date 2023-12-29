@@ -32,7 +32,7 @@ function AuthorList({ data, pageContext }) {
 
   return (
     <PageSpace top={80} bottom={100}>
-      <SEO title="Authors" />
+      <SEO title="Restaurateurs" />
       <div className="container">
         <PageHeader
           title="All Restaurateurs"
@@ -41,7 +41,7 @@ function AuthorList({ data, pageContext }) {
         <AuthorGrid authors={authors} />
         {numberOfPages > 1 && (
           <Pagination
-            baseURL="/proprietors"
+            baseURL="/restaurateurs"
             currentPage={currentPage}
             numberOfPages={numberOfPages}
           />
