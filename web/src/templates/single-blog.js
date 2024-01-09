@@ -10,6 +10,7 @@ import { Title } from '../components/typography/Title';
 import { SingleBlogStyles } from '../styles/blog/SingleBlogStyles';
 import MyPortableText from '../components/MyPortableText';
 import SEO from '../components/seo';
+import Button from '../components/buttons/Button';
 
 /// id coming from context defined in gatsby-node
 export const postQuery = graphql`
@@ -74,15 +75,20 @@ function SingleBlog({ data }) {
             </ParagraphText>
             <ParagraphText className="author">
               <FiUser />
-              <Link to={`/restaurateur/${blog.author.slug.current}`}>
+              <Link to={`/restaurateurs/${blog.author.slug.current}`}>
                 {blog.author.name}
               </Link>
+              {/* add link to reviews here */}
+              <Link to="/reviews">Reviews</Link>
             </ParagraphText>
           </div>
           <hr className="hr" />
           <div className="body">
             <MyPortableText value={blog._rawBody} />
           </div>
+          <Button to="special link here" tag={Link} className="hero__button">
+            Review
+          </Button>
         </div>
       </PageSpace>
     </SingleBlogStyles>

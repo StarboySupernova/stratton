@@ -15,4 +15,8 @@ export const menu = [
     title: 'Restaurateurs',
     path: '/restaurateurs',
   },
+  {
+    title: 'Reviews',
+    path: '/reviews',
+  },
 ];
