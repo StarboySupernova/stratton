@@ -79,7 +79,9 @@ function SingleBlog({ data }) {
                 {blog.author.name}
               </Link>
               {/* add link to reviews here */}
-              <Link to="/reviews">Reviews</Link>
+              <Link to="https://dukeatlas.sanity.studio/intent/create/template=review;type=review/">
+                Review
+              </Link>
             </ParagraphText>
           </div>
           <hr className="hr" />
