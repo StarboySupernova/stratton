@@ -6,11 +6,11 @@ import { Title } from '../typography/Title';
 function AuthorItem({ name, slug, profileImage }) {
   return (
     <AuthorItemStyles className="author-item" to={slug.current}>
-      {/* <GatsbyImage
+      <GatsbyImage
         image={profileImage.asset.gatsbyImageData}
         alt={profileImage.alt}
         className="profileImage"
-      /> */}
+      />
       <Title>{name}</Title>
     </AuthorItemStyles>
   );

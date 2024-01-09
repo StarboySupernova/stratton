@@ -23,7 +23,7 @@ export default {
       name: 'slug',
       type: 'slug', // slug is custom type in sanity
       options: {
-        source: (doc) => `${doc.user}-${doc.restaurant.title}`,
+        source: 'user',
         maxLength: 196,
       },
     },
@@ -31,17 +31,6 @@ export default {
       title: 'Published At',
       name: 'publishedAt',
       type: 'datetime', // datetime is a custom type in sanity
-    },
-    {
-      title: 'Categories/Repertoire',
-      name: 'categories',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'category' }],
-        },
-      ],
     },
     {
       title: 'Review',
@@ -54,7 +43,7 @@ export default {
     // customizing review preview
     select: {
       // selecting which field I want to show on the preview, and preparing them (destructuring the props selected inside preview)
-      title: 'title',
+      title: 'user',
       publishedAt: 'publishedAt',
     },
     prepare({ title, publishedAt }) {

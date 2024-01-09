@@ -135,8 +135,8 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // review paginated pages
-  const totalReviewListPages = Math.ceil(reviews.length / postsPerPage);
-  Array.from({ length: totalAuthorListPages }).forEach((_, index) => {
+  const totalReviewListPages = Math.ceil(reviews.length / 20);
+  Array.from({ length: totalReviewListPages }).forEach((_, index) => {
     createPage({
       path: index === 0 ? `/reviews` : `/reviews/${index + 1}`,
       component: reviewListTemplate,

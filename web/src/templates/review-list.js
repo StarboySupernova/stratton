@@ -1,18 +1,14 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import AuthorGrid from '../components/author/AuthorGrid';
+import ReviewGrid from '../components/review/ReviewGrid';
 import PageHeader from '../components/PageHeader';
 import PageSpace from '../components/PageSpace';
 import Pagination from '../components/Pagination';
 import SEO from '../components/seo';
 
 export const ReviewsQuery = graphql`
-  query reviewListQuery($limit: Int!, $offset: Int!) {
-    allSanityReview(
-      sort: { fields: publishedAt, order: DESC }
-      limit: $limit
-      skip: $offset
-    ) {
+  query reviewListQuery {
+    allSanityReview(sort: { fields: _createdAt, order: DESC }) {
       nodes {
         id
         user
@@ -22,7 +18,7 @@ export const ReviewsQuery = graphql`
         slug {
           current
         }
-        publishedAt
+        publishedAt(formatString: "ddd DD-MMM-YY")
         _rawExcerpt
       }
     }
@@ -38,7 +34,7 @@ function ReviewList({ data, pageContext }) {
       <SEO title="Reviews" />
       <div className="container">
         <PageHeader title="Reviews" description="What other food lovers say" />
-        <AuthorGrid authors={reviews} />
+        <ReviewGrid reviews={reviews} />
         {numberOfPages > 1 && (
           <Pagination
             baseURL="/reviews"
