@@ -78,17 +78,17 @@ function SingleBlog({ data }) {
               <Link to={`/restaurateurs/${blog.author.slug.current}`}>
                 {blog.author.name}
               </Link>
-              {/* add link to reviews here */}
-              <Link to="https://dukeatlas.sanity.studio/intent/create/template=review;type=review/">
-                Review
-              </Link>
             </ParagraphText>
           </div>
           <hr className="hr" />
           <div className="body">
             <MyPortableText value={blog._rawBody} />
           </div>
-          <Button to="special link here" tag={Link} className="hero__button">
+          <Button
+            to="https://dukeatlas.sanity.studio/intent/create/template=review;type=review/"
+            tag={Link}
+            className="hero__button"
+          >
             Review
           </Button>
         </div>
