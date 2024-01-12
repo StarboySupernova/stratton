@@ -9,6 +9,7 @@ struct Home: View {
                 .frame(width: geometry.size.width, height: geometry.size.height)
             }
             .ignoresSafeArea()
+            .overlay(.ultrathinMaterial)
 
             //MainView
             ScrollView(.vertical, showsIndicators: false) {
@@ -48,3 +49,21 @@ struct Home: View {
     }
 }
 
+struct CustomStackView<Title: View, Content: View>: View {
+    var titleView: Title
+    var contentView: Content
+
+    init (@ViewBuilder titleView: @escaping ()-> Title, @ViewBuilder contentView: @escaping 90->Content) {
+        self.contentView = contentView()
+        self.titleView = titleView()
+    }
+
+    var body: some View {
+        titleView
+        .font(.callout)
+        .lineLimit(1)
+        //max height
+        .frame(height: 38)
+        .background(.ultrathinMaterial, in: )
+    }
+}
