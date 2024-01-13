@@ -1,4 +1,5 @@
 struct Home: View {
+    @State var offset: CGFloat = 0  
     var body: some View {
         ZStack {
             //geometryreader for getting height and width
@@ -67,6 +68,18 @@ struct Home: View {
                 }
                 .padding(.top)
                 .padding([.horizontal, .bottom])
+                // getting offset....
+                .overlay(
+                    //using GeometryReader
+                    GeometryReader { geometry -> Color in
+
+                        let minY = geometry.frame(in: .global).minY
+                        DispatchQueue.main.async {
+                            self.offset = minY
+                        }
+                        return Color.clear
+                    }
+                )
             }
         }
     }
@@ -96,6 +109,7 @@ struct ForecastView {
                                         .font(.callout.bold())
                                         .foregroundStyle(.white)
                                     }
+                                    .padding(.horizontal, .medium)
     }
 }
 
@@ -128,5 +142,16 @@ struct CustomStackView<Title: View, Content: View>: View {
             .background(.ultrathinMaterial, in: CustomCorner(corners: [.bottomLeft, .bottomRight], radius: 12))
         }
         .colorScheme(.dark)
+    }
+}
+
+struct ContentView {
+    var body: some View {
+        //getting safe area using GeometryReader since window is deprecated in ios15
+        GeometryReader { geometry in
+
+            let topEdge = geometry.safeAreaInsets.top
+            Home(topEdge: topEdge)
+        }
     }
 }
