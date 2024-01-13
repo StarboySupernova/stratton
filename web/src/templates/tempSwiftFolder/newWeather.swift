@@ -1,5 +1,6 @@
 struct Home: View {
-    @State var offset: CGFloat = 0  
+    @State var offset: CGFloat = 0
+    var topEdge: CGFloat  
     var body: some View {
         ZStack {
             //geometryreader for getting height and width
@@ -37,6 +38,7 @@ struct Home: View {
                         .foregroundStyle(.white)
                         .shadow(radius: 5)
                     }
+                    .offset(y: -offset)
 
                     //Custom Data View
                     VStack(spacing: 8) {
@@ -82,6 +84,17 @@ struct Home: View {
                 )
             }
         }
+    }
+
+    func getTitleOffset() -> CGFloat {
+        //setting a single max height for whole title
+        //consider max as 120
+        let progress = offset / 120
+
+        //since top padding is 25
+        let newOffset = (progress <= 1.0 ? progress : 1) * 20
+
+        return newOffset 
     }
 }
 
@@ -149,9 +162,9 @@ struct ContentView {
     var body: some View {
         //getting safe area using GeometryReader since window is deprecated in ios15
         GeometryReader { geometry in
-
             let topEdge = geometry.safeAreaInsets.top
             Home(topEdge: topEdge)
+            .ignoresSafeArea(.all, edges: .top)
         }
     }
 }
