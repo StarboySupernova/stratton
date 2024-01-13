@@ -174,6 +174,7 @@ struct CustomStackView<Title: View, Content: View>: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading)
             .background(.ultrathinMaterial, in: CustomCorner(corners: [.topLeft, .topRight], radius: 12)) 
+            .zIndex(1)
 
             VStack {
                 Divider()
@@ -182,7 +183,10 @@ struct CustomStackView<Title: View, Content: View>: View {
                 .padding()
             }
             .background(.ultrathinMaterial, in: CustomCorner(corners: [.bottomLeft, .bottomRight], radius: 12))
-            //Moving content Upward - stopping point, and divergence with ComplexUI file
+            //Moving content Upward
+            .offset(y: topOffset >= 120 ? 0 : -(-topOffset + 120))
+            .zIndex(0)
+            //clipping to avoid background overlay
             
         }
         .colorScheme(.dark)
