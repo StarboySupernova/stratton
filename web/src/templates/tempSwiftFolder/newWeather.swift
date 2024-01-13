@@ -40,12 +40,62 @@ struct Home: View {
                     //Custom Data View
                     VStack(spacing: 8) {
                         //Custom Stack
+                        CustomStackView {
+                            //Label here
+                            Label {
+                                Text("Hourly Forecast")
+                            } icon: {
+                                Image(systemName: "clock")
+                            }
+                        } contentView: {
+                            //Content...
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 15) {
+                                    ForecastView(time:"12 PM", celsius: 94, image: "sun.min")
+
+                                    ForecastView(time:"12 PM", celsius: 94, image: "sun.min")
+
+                                    ForecastView(time:"12 PM", celsius: 94, image: "sun.min")
+
+                                    ForecastView(time:"12 PM", celsius: 94, image: "sun.min")
+
+                                    ForecastView(time:"12 PM", celsius: 94, image: "sun.min")
+                                }
+                            }
+                        }
                     }
                 }
                 .padding(.top)
                 .padding([.horizontal, .bottom])
             }
         }
+    }
+}
+
+struct ForecastView {
+    var time: String
+    var celsius: CGFloat
+    var image: String
+
+    var body: some View {
+        VStack(spacing: 15) {
+                                        Text(time)
+                                        .font(.callout.bold())
+                                        .foregroundStyle(.white)
+
+                                        Image(systemName: image)
+                                        .font(.title2)
+                                        //multicolor
+                                        .symbolVariant(.fill)
+                                        .symbolRenderingMode(.palette)
+                                        .foregroundStyle(.white, .yellow)
+                                        //max frame
+                                        .frame(height: 30)
+
+                                        Text("\(Int(celsius))")
+                                        .font(.callout.bold())
+                                        .foregroundStyle(.white)
+                                    }
     }
 }
 
@@ -59,11 +109,24 @@ struct CustomStackView<Title: View, Content: View>: View {
     }
 
     var body: some View {
-        titleView
-        .font(.callout)
-        .lineLimit(1)
-        //max height
-        .frame(height: 38)
-        .background(.ultrathinMaterial, in: )
+        VStack(spacing: 0) {
+            titleView
+            .font(.callout)
+            .lineLimit(1)
+            //max height
+            .frame(height: 38)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.leading)
+            .background(.ultrathinMaterial, in: CustomCorner(corners: [.topLeft, .topRight], radius: 12)) 
+
+            VStack {
+                Divider()
+
+                contentView
+                .padding()
+            }
+            .background(.ultrathinMaterial, in: CustomCorner(corners: [.bottomLeft, .bottomRight], radius: 12))
+        }
+        .colorScheme(.dark)
     }
 }
