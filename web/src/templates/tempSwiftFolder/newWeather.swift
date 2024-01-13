@@ -27,30 +27,39 @@ struct Home: View {
                         .font(.system(size: 45))
                         .foregroundStyle(.white)
                         .shadow(radius: 5)
+                        .opacity(getTitleOpacity())
 
                         Text("Cloudy")
                         .foregroundStyle(.secondary)
                         .foregroundStyle(.white)
                         .shadow(radius: 5)
+                        .opacity(getTitleOpacity())
 
                         Text("H:33 L:15")
                         .foregroundStyle(.primary)
                         .foregroundStyle(.white)
                         .shadow(radius: 5)
+                        .opacity(getTitleOpacity())
                     }
                     .offset(y: -offset)
+                    //for bottom drag effect
+                    .offset(y: offset > 0 ? (offset / UIScreen.main.bounds.width) * 100 : 0)
+                    .offset(y: getTitleOffset())
 
                     //Custom Data View
                     VStack(spacing: 8) {
                         //Custom Stack
-                        CustomStackView {
+                        
+                        //For Testing...
+                        ForEach(1...5, id: \.self) { _ in
+                            CustomStackView {
                             //Label here
                             Label {
                                 Text("Hourly Forecast")
                             } icon: {
                                 Image(systemName: "clock")
                             }
-                        } contentView: {
+                            } contentView: {
                             //Content...
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 15) {
@@ -65,6 +74,7 @@ struct Home: View {
                                     ForecastView(time:"12 PM", celsius: 94, image: "sun.min")
                                 }
                             }
+                        }
                         }
                     }
                 }
@@ -89,12 +99,27 @@ struct Home: View {
     func getTitleOffset() -> CGFloat {
         //setting a single max height for whole title
         //consider max as 120
-        let progress = offset / 120
+        if offset < 0 {
 
-        //since top padding is 25
-        let newOffset = (progress <= 1.0 ? progress : 1) * 20
+            let progress = -offset / 120
 
-        return newOffset 
+         //since top padding is 25
+            let newOffset = (progress <= 1.0 ? progress : 1) * 20
+
+            return -newOffset 
+        }
+
+        return 0
+    }
+
+    func getTitleOpacity() -> CGFloat {
+        let titleOffset = -getTitleOffset()
+
+        let progress = titleOffset / 20
+
+        let opacity = 1 - progress
+
+        return opacity
     }
 }
 
@@ -130,6 +155,10 @@ struct CustomStackView<Title: View, Content: View>: View {
     var titleView: Title
     var contentView: Content
 
+    //Offsets
+    @State private var topOffset: CGFloat=0
+    @State private var bottomOffset: CGFloat=0
+
     init (@ViewBuilder titleView: @escaping ()-> Title, @ViewBuilder contentView: @escaping 90->Content) {
         self.contentView = contentView()
         self.titleView = titleView()
@@ -155,6 +184,20 @@ struct CustomStackView<Title: View, Content: View>: View {
             .background(.ultrathinMaterial, in: CustomCorner(corners: [.bottomLeft, .bottomRight], radius: 12))
         }
         .colorScheme(.dark)
+        .cornerRadius(12)
+        //stopping View at 120
+        .offset(y: topOffset >= 120 ? 0 : -topOffset + 120)
+        .background(
+            GeometryReader{ geometry -> Color in
+                let minY = proxy.frame(in: .global).minY
+
+                DispatchQueue.main.async {
+                    self.topOffset = minY
+                }
+
+                return Color.clear
+            }
+        )
     }
 }
 
