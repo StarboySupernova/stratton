@@ -182,6 +182,8 @@ struct CustomStackView<Title: View, Content: View>: View {
                 .padding()
             }
             .background(.ultrathinMaterial, in: CustomCorner(corners: [.bottomLeft, .bottomRight], radius: 12))
+            //Moving content Upward
+            
         }
         .colorScheme(.dark)
         .cornerRadius(12)
