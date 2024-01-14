@@ -20,23 +20,35 @@ var sampleCards: [Card] = //[get from GPT ]
 
 struct Home: View {
     var proxy: ScrollViewProxy
+    var size: CGSize
+    var safeArea: EdgeInsets
+
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 10) {
-
+                ProfileCard()
             }
+            .padding(.top, safeArea.top + 15)
+            .padding(.bottom, safeArea.bottom + 15)
         }
+    }
+
+    ///Profile Card View
+    @ViewBuilder func ProfileCard () -> some View {
+
     }
 }
 
 struct ContentView: View {
     var body: some View {
         GeometryReader {
-            //ScrollViewReader for scrolling ScrollView
+            let size = $0.size
+            let safeArea = $0.safeAreaInsets
             ScrollViewReader { proxy in
-             Home(proxy: proxy)
+             Home(proxy: proxy, size: size, safeArea: safeArea)
             }
             .preferredColorScheme(.light)
+            .ignoresSafeArea()
         }
     }
 }
