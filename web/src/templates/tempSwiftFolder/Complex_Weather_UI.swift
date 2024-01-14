@@ -50,16 +50,14 @@ struct Home: View {
                     VStack(spacing: 8) {
                         //Custom Stack
                         
-                        //For Testing...
-                        ForEach(1...5, id: \.self) { _ in
-                            CustomStackView {
+                        CustomStackView {
                             //Label here
                             Label {
                                 Text("Hourly Forecast")
                             } icon: {
                                 Image(systemName: "clock")
                             }
-                            } contentView: {
+                        } contentView: {
                             //Content...
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 15) {
@@ -75,7 +73,8 @@ struct Home: View {
                                 }
                             }
                         }
-                        }
+
+                        WeatherDataView()
                     }
                 }
                 .padding(.top)
@@ -173,7 +172,7 @@ struct CustomStackView<Title: View, Content: View>: View {
             .frame(height: 38)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading)
-            .background(.ultrathinMaterial, in: CustomCorner(corners: [.topLeft, .topRight], radius: 12)) 
+            .background(.ultrathinMaterial, in: CustomCorner(corners: bottomOffset < 38 ? .allCorners : [.topLeft, .topRight], radius: 12)) 
             .zIndex(1)
 
             VStack {
@@ -187,23 +186,50 @@ struct CustomStackView<Title: View, Content: View>: View {
             .offset(y: topOffset >= 120 ? 0 : -(-topOffset + 120))
             .zIndex(0)
             //clipping to avoid background overlay
-            
+            .clipped()
+            .opacity(getOpacity())
         }
         .colorScheme(.dark)
         .cornerRadius(12)
+        .opacity(getOpacity())
         //stopping View at 120
         .offset(y: topOffset >= 120 ? 0 : -topOffset + 120)
         .background(
             GeometryReader{ geometry -> Color in
                 let minY = proxy.frame(in: .global).minY
+                let maxY = proxy.frame(in: .global).maxY
 
                 DispatchQueue.main.async {
                     self.topOffset = minY
+                    self.bottomOffset = maxY - 120
                 }
 
                 return Color.clear
             }
         )
+        .modifier(CornerModifier(bottomOffset: $bottomOffset))
+    }
+
+    func getOpacity() -> CGFloat {
+        if bottomOffset < 28 {
+            let progress = bottomOffset / 28
+            return progress
+        }
+
+        return 1
+    }
+}
+
+struct CornerModifier: ViewModifier {
+    @Binding var bottomOffset: CGFloat
+
+    func body(content: Content) -> some View {
+        if bottomOffset < 38 { //38 is the title height we gave
+            content
+        } else {
+            content
+            .cornerRadius(12)
+        }
     }
 }
 
@@ -216,4 +242,72 @@ struct ContentView {
             .ignoresSafeArea(.all, edges: .top)
         }
     }
+}
+
+struct WeatherDataView: View {
+    var body: some View{
+        VStack(spacing: 8){
+            CustomStackView {
+                Label {
+                    Text("Air Quality")
+                } icon : {
+                    Image(systemName: "circle.hexagongrid.fill")
+                }
+            } contentView: {
+                VStack(alignment: .leading, spacing: 10){
+                    Text("143-Moderately polluted")
+                    .font(.title3.bold())
+
+                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur")
+                    .fontWeight(.semibold)
+                }
+            }
+
+            HStack {
+                CustomStackView {
+                Label {
+                    Text("UV Index")
+                } icon: {
+                    Image(systemName: "sun.min")
+                }
+                } contentView: {
+                VStack(alignment: .leading, spacing: 10)
+                {
+                    Text("0")
+                    .font(.title)
+                    .fontWeight(.semibold)
+
+                    Text("Low")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                }
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                }
+
+                CustomStackView {
+                    Label {
+                    Text("Rainfall")
+                    } icon: {
+                    Image(systemName: "drop.fill")
+                    }
+                } contentView: {
+                    VStack(alignment: .leading, spacing: 10)
+                    {
+                    Text("0 mm")
+                    .font(.title)
+                    .fontWeight(.semibold)
+
+                    Text("in last 24 hours")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    }
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                }
+            }
+            .frame(maxHeight: .infinity)
+        }
+    }
+    
 }
