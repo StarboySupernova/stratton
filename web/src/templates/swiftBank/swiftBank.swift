@@ -35,7 +35,29 @@ struct Home: View {
 
     ///Profile Card View
     @ViewBuilder func ProfileCard () -> some View {
+        HStack(alignment: .center, spacing: 4){
+            Text("Hello")
+            .font(.title)
 
+            Text("JUstine")
+            .font(.title)
+            .fontWeight(.bold)
+
+            Spacer(minLength: 0)
+
+            Image("Pic")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width:55, height:55)
+            .clipShape(Circle())
+        }
+        .padding(.horizontal, 25)
+        .padding(.vertical, 35)
+        .background(
+            RoundedRectangle(cornerRadius:35, style: .continuous)
+            .fill(Color("Profile"))
+        )
+        
     }
 }
 
