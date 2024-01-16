@@ -56,6 +56,7 @@ struct Home: View {
                                     CardView(card: card)
                                 }
                             }
+                            .frame(width: geometry.width - 60)
                             ///Page Tag (Index)
                             .tag(index(card))
                         }
@@ -158,10 +159,66 @@ struct CardView: View {
                     .fill(.black)
                     .frame(height: size.height / 3)
                     ///Card Details
+                    .overlay {
+                        VStack {
+                            Text(card.cardName)
+                            .font(.title)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                            Spacer(minLength: 0)
+
+                            HStack {
+                                Text("Debit Card")
+                                .font(.callout)
+
+                                Spacer(minLength: 0)
+
+                                Image("Visa")
+                                .resizable()
+                                .renderingMode(.template) 
+                                .aspectRatio(contentMode: .fit) 
+                                .frame(width: 60)
+                            }
+                        }
+                        .foregroundColor(.white)
+                        .padding(25) 
+                    }
             }
             .clipShape(RoundedRectangle(cornerRadius:40, style: .continuous))
 
         }
     }
+    
+}
+
+//Offset Preference Key
+
+struct OffsetKey: PreferenceKey {
+ static var defaultValue: CGRect = .zero  
+
+ static func reduce(value: inout CGRect, nextValue: () -> CGRect) {
+    value = nextValue()
+ }
+    
+}
+
+extension View {
+//Offset View Modifier
+@ViewBuilder
+func offsetX(_ addObserver: Bool, completion: @escaping (CGRect) -> ()) -> some View {
+    self
+    .frame(maxWidth: .infinity)
+    .overlay {
+        if addObserver {
+            GeometryReader {
+                let rect = $0.frame(in: .global)
+
+                Color.clear
+                .preference(key: OffsetKey.self, value: rect)
+                .onPreferenceChange(OffsetKey.self, perform: completion)
+            }
+        }
+    }
+}
     
 }
