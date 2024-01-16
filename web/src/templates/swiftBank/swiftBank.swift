@@ -73,10 +73,11 @@ struct Home: View {
                     .background(
                         RoundedRectangle(cornerRadius:40, style: .continuous)
                         .fill(Color("ExpandBG").gradient)
-                        .frame(width:geometry.width - 60, height:pageHeight)
+                        //Expanding to Full Screen, Based on the Progress
+                        .frame(width:geometry.width - (60 * reverseProgress(size)), height:pageHeight)
                         /// Making it a little visible at Idle
-                        .offset(x:-15)
-                        .scaleEffect(0.95, anchor: .leading)
+                        .offset(x:-15 * reverseProgress(size))
+                        .scaleEffect(0.95 + (0.05 * progress(size)), anchor: .leading)
                         /// Moving along side with the second card
                         .offset(x: (offset + size.width) < 0 ? (offset + size.width) : 0)
                     )
@@ -127,13 +128,13 @@ struct Home: View {
         let pageOffset = offset + size.width
         let progress = pageOffset / size.width
 
-        return max(progress, 1)
+        return min(progress, 1)
     }
 
     //Reverse Progress(1 - 0)
     func reverseProgress(_ size: CGSize) -> CGFloat {
         let progress = 1  - progress(size)
-        return min(progress, 0)
+        return max(progress, 0)
     }
 }
 
