@@ -275,7 +275,21 @@ struct ExpensesView {
     var body: some View {
         VStack(spacing: 18) {
             ForEach(expenses) { expense in 
-            
+                HStack (spacing: 12) {
+                    Image(expense.productIcon)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width:55, height:55)
+
+                    VStack(alignment: .leading, spacing: 8)
+                    {
+                        Text(expense.product)
+                        Text(expense.spendType)
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                    }
+                    .frame(maxWidth: .infinity)
+                }
             }
         }
     }
