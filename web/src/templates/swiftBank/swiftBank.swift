@@ -73,9 +73,9 @@ struct Home: View {
                     .background(
                         RoundedRectangle(cornerRadius:40, style: .continuous)
                         .fill(Color("ExpandBG").gradient)
-                        .frame(height: pageHeight + fullScreenHeight(size, pageHeight))
+                        .frame(height: pageHeight + fullScreenHeight(size, pageHeight, safeArea))
                         //Expanding to Full Screen, Based on the Progress
-                        .frame(width:geometry.width - (60 * reverseProgress(size)), height:pageHeight)
+                        .frame(width:geometry.width - (60 * reverseProgress(size)), height:pageHeight, alignment: .top)
                         /// Making it a little visible at Idle
                         .offset(x:-15 * reverseProgress(size))
                         .scaleEffect(0.95 + (0.05 * progress(size)), anchor: .leading)
@@ -124,9 +124,9 @@ struct Home: View {
     }
 
     ///Full Screen Height
-    func fullScreenHeight(_ size: CGSize, _ pageHeight: CGFloat) -> CGFloat {
+    func fullScreenHeight(_ size: CGSize, _ pageHeight: CGFloat, safeArea: EdgeInsets) -> CGFloat {
         let progress = progress(size)
-        let remainingScreenHeight = progress * (size.height - pageHeight)
+        let remainingScreenHeight = progress * (size.height - (pageHeight - safeArea.top - safeArea.bottom))
 
         return remainingScreenHeight
     }
