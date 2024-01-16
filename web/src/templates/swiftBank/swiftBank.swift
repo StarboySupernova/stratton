@@ -267,3 +267,16 @@ func offsetX(_ addObserver: Bool, completion: @escaping (CGRect) -> ()) -> some 
 }
     
 }
+
+///Expenses View
+struct ExpensesView {
+    var expenses: [Expense]
+
+    var body: some View {
+        VStack(spacing: 18) {
+            ForEach(expenses) { expense in 
+            
+            }
+        }
+    }
+}
