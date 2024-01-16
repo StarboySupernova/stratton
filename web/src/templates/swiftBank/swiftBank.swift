@@ -71,7 +71,7 @@ struct Home: View {
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
                     .background(
-                        RoundedRectangle(cornerRadius:40, style: .continuous)
+                        RoundedRectangle(cornerRadius:40 * reverseProgress(size), style: .continuous)
                         .fill(Color("ExpandBG").gradient)
                         .frame(height: pageHeight + fullScreenHeight(size, pageHeight, safeArea))
                         //Expanding to Full Screen, Based on the Progress
@@ -85,6 +85,7 @@ struct Home: View {
                     )
                 }
                 .frame(height: pageHeight)
+                .zIndex(1000)
             }
             .padding(.top, safeArea.top + 15)
             .padding(.bottom, safeArea.bottom + 15)
