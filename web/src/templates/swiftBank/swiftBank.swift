@@ -25,6 +25,8 @@ struct Home: View {
     /// View Properties
     @State private var activePage: Int = 1
     @State private var myCards: [Card]= sampleCards
+    /// Page Offset
+    @State private var offset: CGFloat= 0
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -59,6 +61,12 @@ struct Home: View {
                             .frame(width: geometry.width - 60)
                             ///Page Tag (Index)
                             .tag(index(card))
+                            .offsetX(activePage == index(card)) { rect in
+                                //Calculating Entire Page Offset
+                                let minX = rect.minX
+                                let pageOffset = minX - (size.width * CGFloat(index(card)))
+                                offset = pageOffset
+                            }
                         }
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
