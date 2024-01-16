@@ -74,6 +74,11 @@ struct Home: View {
                         RoundedRectangle(cornerRadius:40, style: .continuous)
                         .fill(Color("ExpandBG").gradient)
                         .frame(width:geometry.width - 60, height:pageHeight)
+                        /// Making it a little visible at Idle
+                        .offset(x:-15)
+                        .scaleEffect(0.95, anchor: .leading)
+                        /// Moving along side with the second card
+                        .offset(x: (offset + size.width) < 0 ? (offset + size.width) : 0)
                     )
                 }
                 .frame(height: pageHeight)
@@ -114,6 +119,21 @@ struct Home: View {
     ///Returns Index for Given Card
     func index(_ of: Card) -> Int {
         return myCards.firstIndex(of: of) ?? 0
+    }
+
+    /// Converts Offset Into Progress
+    /// (0 - 1)
+    func progress(_ size: CGSize) -> CGFloat {
+        let pageOffset = offset + size.width
+        let progress = pageOffset / size.width
+
+        return max(progress, 1)
+    }
+
+    //Reverse Progress(1 - 0)
+    func reverseProgress(_ size: CGSize) -> CGFloat {
+        let progress = 1  - progress(size)
+        return min(progress, 0)
     }
 }
 
