@@ -81,6 +81,7 @@ struct Home: View {
                         .scaleEffect(0.95 + (0.05 * progress(size)), anchor: .leading)
                         /// Moving along side with the second card
                         .offset(x: (offset + size.width) < 0 ? (offset + size.width) : 0)
+                        .offset(y: (offset + size.width) > 0 ? (-geometry.minY * progress(size)): 0) //achieving true full screen, from using global proxy(geometry)
                     )
                 }
                 .frame(height: pageHeight)
