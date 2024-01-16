@@ -86,9 +86,30 @@ struct Home: View {
                 }
                 .frame(height: pageHeight)
                 .zIndex(1000)
+
+                /// Displaying Expenses
+                ExpensesView(expenses: myCards[activePage == 0 ? 1 : activePage].expenses)
+                .padding(.horizontal, 30)
+                .padding(.top, 30)
             }
             .padding(.top, safeArea.top + 15)
             .padding(.bottom, safeArea.bottom + 15)
+            .id("CONTENT")
+        }
+        .scrollDisabled(activePage == 0)
+        .overlay(content : {
+            if reverseProgress(size) < 0.15 && activePage == 0 {
+                ExpandedView()
+                ///adding animation
+                .scaleEffect(1 - reverseProgress(size))
+                .opacity(1.0 - (reverseProgress(size) / 0.15))
+                .transition(.identity)
+            }
+        })
+        onChange(of: offset) { newValue in 
+            if newValue == 0 && activePage == 0 {
+                geometry.scrollTo("CONTENT", anchor: .topLeading) 
+            }
         }
     }
 
@@ -271,6 +292,7 @@ func offsetX(_ addObserver: Bool, completion: @escaping (CGRect) -> ()) -> some 
 ///Expenses View
 struct ExpensesView {
     var expenses: [Expense]
+    @State private var animateChange: Bool=true
 
     var body: some View {
         VStack(spacing: 18) {
@@ -288,7 +310,24 @@ struct ExpensesView {
                         .font(.caption)
                         .foregroundColor(.gray)
                     }
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                    Text(expense.amountSpent)
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                }
+            }
+        }
+        .opacity(animateChange ? 1 : 0)
+        .offset(y: animateChange ? 0 : 50)
+        .onChange(of: expenses) { newValue in 
+            withAnimation(.easeInOut(duration: 0.1)) {
+                animateChange = false
+            }
+
+            DispatchQueue.main.asynAfter(deadline: .now() + 0.1) {
+                withAnimation(.easeInOut(duration: 0.25)) {
+                    animateChange = true
                 }
             }
         }
