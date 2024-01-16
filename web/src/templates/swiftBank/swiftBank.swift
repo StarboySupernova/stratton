@@ -73,7 +73,7 @@ struct Home: View {
                     .background(
                         RoundedRectangle(cornerRadius:40, style: .continuous)
                         .fill(Color("ExpandBG").gradient)
-                        .frame(height: pageHeight + fullScreenHeight(size))
+                        .frame(height: pageHeight + fullScreenHeight(size, pageHeight))
                         //Expanding to Full Screen, Based on the Progress
                         .frame(width:geometry.width - (60 * reverseProgress(size)), height:pageHeight)
                         /// Making it a little visible at Idle
@@ -121,6 +121,14 @@ struct Home: View {
     ///Returns Index for Given Card
     func index(_ of: Card) -> Int {
         return myCards.firstIndex(of: of) ?? 0
+    }
+
+    ///Full Screen Height
+    func fullScreenHeight(_ size: CGSize, _ pageHeight: CGFloat) -> CGFloat {
+        let progress = progress(size)
+        let remainingScreenHeight = progress * (size.height - pageHeight)
+
+        return remainingScreenHeight
     }
 
     /// Converts Offset Into Progress
