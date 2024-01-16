@@ -127,8 +127,40 @@ struct CardView: View {
 
             VStack(spacing: 0)
             {
-                
+                 Rectangle()
+                 .fill(card.cardColor.gradient)
+                 ///Card Details
+                 .overlay(alignment: .top) {
+                    VStack {
+                        HStack {
+                            Image("Sim")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width:65, height:65)
+
+                            Spacer(minLength: 0)
+
+                            Image(systemName: "wave.3.right")
+                            .font(.largeTitle.bold())
+                        }
+
+                        Spacer(minLength: 0)
+
+                        Text(card.cardBalance)
+                        .font(.largeTitle.bold())
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                    }
+                    .padding(30)
+                 }
+
+                 Rectangle()
+                    .fill(.black)
+                    .frame(height: size.height / 3)
+                    ///Card Details
             }
+            .clipShape(RoundedRectangle(cornerRadius:40, style: .continuous))
+
         }
     }
     
