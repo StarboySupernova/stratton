@@ -73,6 +73,7 @@ struct Home: View {
                     .background(
                         RoundedRectangle(cornerRadius:40, style: .continuous)
                         .fill(Color("ExpandBG").gradient)
+                        .frame(height: pageHeight + fullScreenHeight(size))
                         //Expanding to Full Screen, Based on the Progress
                         .frame(width:geometry.width - (60 * reverseProgress(size)), height:pageHeight)
                         /// Making it a little visible at Idle
