@@ -70,6 +70,11 @@ struct Home: View {
                         }
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
+                    .background(
+                        RoundedRectangle(cornerRadius:40, style: .continuous)
+                        .fill(Color("ExpandBG").gradient)
+                        .frame(width:geometry.width - 60, height:pageHeight)
+                    )
                 }
                 .frame(height: pageHeight)
             }
