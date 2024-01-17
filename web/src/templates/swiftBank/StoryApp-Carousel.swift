@@ -1,5 +1,6 @@
 struct Home: View {
     @State private var index=0
+    @State private var stories: [Story]= //get from GPT
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack
@@ -70,7 +71,13 @@ struct Home: View {
                  Spacer()
                 }
                 .padding(.horizontal)
-                .padding(.top)
+                .padding(.top, 10)
+
+                //Card View
+                ZStack
+                {
+                    
+                }
 
                 Spacer()
             }
@@ -80,4 +87,11 @@ struct Home: View {
             .edgesIgnoringSafeArea(.all)
         )
     }
+}
+
+struct Story: Identifiable {
+    var id: Int
+    var image: String
+    var offset: CGFloat
+    var title: String
 }
