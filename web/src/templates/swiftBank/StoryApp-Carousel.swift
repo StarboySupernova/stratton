@@ -43,8 +43,34 @@ struct Home: View {
 
                 HStack
                 {
-                    
+                 Text("Animated")
+                 .font(.caption) 
+                 .foregroundColor(index == 0 ? .white : Color("Color1").opacity(0.85))
+                 .fontWeight(.bold) 
+                 .padding(.vertical, 6)
+                 .padding(.horizontal, 20)
+                 .background(Color("Color").opacity(index == 0 ? 1 : 0))
+                 .clipShape(Capsule()) 
+                 .onTapGesture {
+                    index = 0
+                 }
+
+                 Text("25+ Series")
+                 .font(.caption) 
+                 .foregroundColor(index == 1 ? .white : Color("Color1").opacity(0.85))
+                 .fontWeight(.bold) 
+                 .padding(.vertical, 6)
+                 .padding(.horizontal, 20)
+                 .background(Color("Color").opacity(index == 0 ? 1 : 0))
+                 .clipShape(Capsule()) 
+                 .onTapGesture {
+                    index = 1
+                 }
+
+                 Spacer()
                 }
+                .padding(.horizontal)
+                .padding(.top)
 
                 Spacer()
             }
