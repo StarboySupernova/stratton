@@ -80,13 +80,42 @@ struct Home: View {
                     //ZStack will overlap views so last will become first
                     ForEach(stories.reversed()) { story in
                         HStack {
-                            Image(story.image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            //dynamic frame
-                            //dynamic height
-                            .frame(width:calculateWidth(), height:(UIScreen.main.bounds.height / 1.8) - CGFloat(story.id - scrolled) * 50)
-                            .cornerRadius(15)
+                            ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)){
+                                Image(story.image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                //dynamic frame
+                                //dynamic height
+                                .frame(width:calculateWidth(), height:(UIScreen.main.bounds.height / 1.8) - CGFloat(story.id - scrolled) * 50)
+                                .cornerRadius(15)
+
+                                VStack(alignment: .leading, spacing: 18)
+                                {
+                                    HStack
+                                    {
+                                        Text(story.title)
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+
+                                        Spacer()
+                                    }
+
+                                    Button(action: {}) {
+                                        Text("Read Later")
+                                        .font(.caption)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.white)
+                                        .padding(.vertical, 6)
+                                        .padding(.horizontal, 25)
+                                        .background(Color("Color1"))
+                                        .clipShape(Capsule())
+                                    }
+                                }
+                                .frame(width: calculateWidth() - 40)
+                                .padding(.leading, 20)
+                                .padding(.bottom, 20)
+                            }
                             .offset(x: story.id - scrolled <= 2 ? CGFloat(story.id - scrolled) * 30 : 60)
 
                             Spacer(minLength: 0)
@@ -96,12 +125,20 @@ struct Home: View {
                         .offset(x: story.offset)
                         .gesture(DragGesture().onChanged({(value) in
                             withAnimation {
-                                stories[story.id].offset = value.translation.width
+                                //disabling drag for last card
+                                if value.translation.width < 0 && story.id != stories.last!.id {
+                                    stories[story.id].offset = value.translation.width
+                                } else {
+                                    //restoring cards
+                                    if story.id > 0 {
+                                        stories[story.id - 1].offset = -(calculateWidth() + 60) + value.translation.width 
+                                    }
+                                }
                             }
                         }).onEnded({(value) in
                             withAnimation {
                                 if value.translation.width < 0 {
-                                    if -value.translation.width > 180 {
+                                    if -value.translation.width > 180 && story.id != stories.last!.id {
                                         //moving view away
                                         stories[story.id].offset = -(calculateWidth() + 60)
                                         scrolled += 1
@@ -110,7 +147,14 @@ struct Home: View {
                                     }
                                 } else {
                                     //restoring card
-
+                                    if story.id > 0 {
+                                        if value.translation.width > 180 {
+                                            stories[story.id - 1].offset = 0
+                                            scrolled -= 1
+                                        } else {
+                                            stories[story.id - 1].offset = -(calculateWidth() + 60)
+                                        }
+                                    }
                                 }
                             }
                         }))
