@@ -76,7 +76,15 @@ struct Home: View {
                 //Card View
                 ZStack
                 {
-                    
+                    //ZStack will overlap views so last will become first
+                    ForEach(stories.reversed()) { story in
+                        Image(story.image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        //dynamic frame
+                        .frame(width:calculateWidth(), height:400)
+                        .cornerRadius(15)
+                    }
                 }
 
                 Spacer()
@@ -86,6 +94,15 @@ struct Home: View {
             LinearGradient(gradient: .init(colors: [Color("top"), Color("bottom")]),startPoint: .top, endPoint: .bottom)
             .edgesIgnoringSafeArea(.all)
         )
+    }
+
+    func calculateWidth() -> CGFloat {
+        let screen = UIScreen.main.bounds.width - 30
+
+        //showing first 3 cards. all the others will be hidden
+        let width = screen - (2 * 30)
+
+        return width
     }
 }
 
