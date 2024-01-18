@@ -78,14 +78,22 @@ struct Home: View {
                 {
                     //ZStack will overlap views so last will become first
                     ForEach(stories.reversed()) { story in
-                        Image(story.image)
+                        HStack {
+                            Image(story.image)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         //dynamic frame
-                        .frame(width:calculateWidth(), height:400)
+                        //dynamic height
+                        .frame(width:calculateWidth(), height:(UIScreen.main.bounds.height / 1.8) - CGFloat(story.id * 50))
                         .cornerRadius(15)
+                        .offset(x: story.id <= 2 ? CGFloat(story.id * 30) : 60)
+
+                        Spacer(minLength: 0)
+                        }
                     }
                 }
+                //max height
+                .frame(height: UIScreen.main.bounds.height / 1.8)
 
                 Spacer()
             }
