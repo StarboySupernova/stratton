@@ -93,7 +93,15 @@ struct Home: View {
                         .contentShape(Rectangle())
                         // adding gesture
                         .offset(x: story.offset)
-                        
+                        .gesture(DragGesture().onChanged({(value) in
+                            withAnimation {
+                                stories[story.id].offset = value.translation.width
+                            }
+                        }).onEnded({(value) in
+                            withAnimation {
+                                stories[story.id].offset = 0
+                            }
+                        }))
                     }
                 }
                 //max height
