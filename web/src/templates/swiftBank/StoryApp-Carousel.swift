@@ -85,9 +85,9 @@ struct Home: View {
                             .aspectRatio(contentMode: .fill)
                             //dynamic frame
                             //dynamic height
-                            .frame(width:calculateWidth(), height:(UIScreen.main.bounds.height / 1.8) - CGFloat(story.id * 50))
+                            .frame(width:calculateWidth(), height:(UIScreen.main.bounds.height / 1.8) - CGFloat(story.id - scrolled) * 50)
                             .cornerRadius(15)
-                            .offset(x: story.id <= 2 ? CGFloat(story.id * 30) : 60)
+                            .offset(x: story.id - scrolled <= 2 ? CGFloat(story.id - scrolled) * 30 : 60)
 
                             Spacer(minLength: 0)
                         }
