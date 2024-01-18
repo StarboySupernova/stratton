@@ -94,6 +94,7 @@ struct Home: View {
                 }
                 //max height
                 .frame(height: UIScreen.main.bounds.height / 1.8)
+                .padding(.horizontal, 25)
 
                 Spacer()
             }
@@ -105,7 +106,7 @@ struct Home: View {
     }
 
     func calculateWidth() -> CGFloat {
-        let screen = UIScreen.main.bounds.width - 30
+        let screen = UIScreen.main.bounds.width - 50
 
         //showing first 3 cards. all the others will be hidden
         let width = screen - (2 * 30)
