@@ -80,21 +80,26 @@ struct Home: View {
                     ForEach(stories.reversed()) { story in
                         HStack {
                             Image(story.image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        //dynamic frame
-                        //dynamic height
-                        .frame(width:calculateWidth(), height:(UIScreen.main.bounds.height / 1.8) - CGFloat(story.id * 50))
-                        .cornerRadius(15)
-                        .offset(x: story.id <= 2 ? CGFloat(story.id * 30) : 60)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            //dynamic frame
+                            //dynamic height
+                            .frame(width:calculateWidth(), height:(UIScreen.main.bounds.height / 1.8) - CGFloat(story.id * 50))
+                            .cornerRadius(15)
+                            .offset(x: story.id <= 2 ? CGFloat(story.id * 30) : 60)
 
-                        Spacer(minLength: 0)
+                            Spacer(minLength: 0)
                         }
+                        .contentShape(Rectangle())
+                        // adding gesture
+                        .offset(x: story.offset)
+                        
                     }
                 }
                 //max height
                 .frame(height: UIScreen.main.bounds.height / 1.8)
                 .padding(.horizontal, 25)
+                .padding(.top, 25)
 
                 Spacer()
             }
