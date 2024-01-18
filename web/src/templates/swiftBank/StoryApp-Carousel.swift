@@ -1,6 +1,7 @@
 struct Home: View {
     @State private var index=0
     @State private var stories: [Story]= //get from GPT
+    @State private var scrolled=0
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack
@@ -99,7 +100,18 @@ struct Home: View {
                             }
                         }).onEnded({(value) in
                             withAnimation {
-                                stories[story.id].offset = 0
+                                if value.translation.width < 0 {
+                                    if -value.translation.width > 180 {
+                                        //moving view away
+                                        stories[story.id].offset = -(calculateWidth() + 60)
+                                        scrolled += 1
+                                    } else {
+                                        stories[story.id].offset = 0
+                                    }
+                                } else {
+                                    //restoring card
+
+                                }
                             }
                         }))
                     }
