@@ -1,10 +1,10 @@
 {
-  "name": "techhub-blog",
+  "name": "react-js-fullstack-web-app",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Shaif Arfan",
+  "author": "Christian Simbarashe",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
@@ -12,8 +12,8 @@
   },
   "keywords": [
     "sanity",
-    "blog",
-    "techhub"
+    "duke",
+    "culinary"
   ],
   "dependencies": {
     "@sanity/base": "^2.25.4",
