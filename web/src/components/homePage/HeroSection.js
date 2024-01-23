@@ -12,23 +12,26 @@ function HeroSection() {
         <div className="hero__wrapper">
           <div className="left">
             <h1 className="hero__heading">
-              Heightening culinary experiences with technology
+              MWENJE GEOLOGY AND ENVIRONMENTAL CONSULTANTS
             </h1>
             <ParagraphText className="hero__text">
-              We actively leverage cutting edge solutions to compliment and
-              augment your culinary moments, from client to Restaurateur
+              Bringing Africa's mineral wealth to your enlightenment. We bring
+              mining and environmental best practices, compliance and solutions
+              to your business. Africa has been our domain for the past 20
+              years, with a vast field of experience working in all of Southern
+              Africa, East africa and the D.R.C.
             </ParagraphText>
             {/* tag here meaning we should render this as a gatsby link */}
             <Button to="/restaurants" tag={Link} className="hero__button">
-              Explore Restaurants
+              Explore Our Services
             </Button>
           </div>
           <div className="right">
             <StaticImage
               className="hero__image"
-              src="../../images/vr-guy.jpg" // this image works just fine with Duke
-              alt="vr guy"
-              placeholder="blurred" // this property ensures that the image is blurred first before loading
+              src="../../images/tunnel.jpg"
+              alt="mwenje"
+              placeholder="blurred"
               objectPosition="50% 30%"
             />
           </div>
