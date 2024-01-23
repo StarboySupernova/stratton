@@ -10,7 +10,6 @@ import { Title } from '../components/typography/Title';
 import { SingleBlogStyles } from '../styles/blog/SingleBlogStyles';
 import MyPortableText from '../components/MyPortableText';
 import SEO from '../components/seo';
-import Button from '../components/buttons/Button';
 
 /// id coming from context defined in gatsby-node
 export const postQuery = graphql`
@@ -84,13 +83,6 @@ function SingleBlog({ data }) {
           <div className="body">
             <MyPortableText value={blog._rawBody} />
           </div>
-          <Button
-            to="https://dukeatlas.sanity.studio/intent/create/template=review;type=review/"
-            tag={Link}
-            className="hero__button"
-          >
-            Review
-          </Button>
         </div>
       </PageSpace>
     </SingleBlogStyles>

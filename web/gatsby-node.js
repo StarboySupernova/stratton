@@ -15,8 +15,6 @@ exports.createPages = async ({ graphql, actions }) => {
   );
   const authorListTemplate = require.resolve('./src/templates/author-list.js');
 
-  const reviewListTemplate = require.resolve('./src/templates/review-list.js');
-
   const { createPage } = actions;
 
   const result = await graphql(`
@@ -60,7 +58,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const blogs = result.data.allSanityBlog.nodes;
   const categories = result.data.allSanityCategory.nodes;
   const authors = result.data.allSanityAuthor.nodes;
-  const reviews = result.data.allSanityReview.nodes;
 
   // creating single blog pages
   blogs.forEach((blog) => {
@@ -129,21 +126,6 @@ exports.createPages = async ({ graphql, actions }) => {
         limit: postsPerPage,
         offset: index * postsPerPage,
         numberOfPages: totalAuthorListPages,
-        currentPage: index + 1,
-      },
-    });
-  });
-
-  // review paginated pages
-  const totalReviewListPages = Math.ceil(reviews.length / 20);
-  Array.from({ length: totalReviewListPages }).forEach((_, index) => {
-    createPage({
-      path: index === 0 ? `/reviews` : `/reviews/${index + 1}`,
-      component: reviewListTemplate,
-      context: {
-        limit: postsPerPage,
-        offset: index * postsPerPage,
-        numberOfPages: totalReviewListPages,
         currentPage: index + 1,
       },
     });
