@@ -28,7 +28,7 @@ export default {
       type: 'datetime', // datetime is a custom type in sanity
     },
     {
-      title: 'Categories/Repertoire',
+      title: 'Category',
       name: 'categories',
       type: 'array',
       of: [
@@ -39,7 +39,7 @@ export default {
       ],
     },
     {
-      title: 'Proprietor',
+      title: 'Author',
       name: 'author',
       type: 'reference',
       to: [{ type: 'author' }],
@@ -56,7 +56,7 @@ export default {
       description: 'An overview of your culinary offering',
     },
     {
-      title: 'Culinary Service(s), Cuisines & Menus Description',
+      title: 'Service Description',
       name: 'body',
       type: 'richText',
     },

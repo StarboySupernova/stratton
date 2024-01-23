@@ -2,7 +2,7 @@ import { MdPerson } from 'react-icons/md';
 
 export default {
   name: 'author',
-  title: 'Proprietor',
+  title: 'Author',
   type: 'document',
   icon: MdPerson,
   fields: [

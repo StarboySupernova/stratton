@@ -13,7 +13,7 @@ export default {
     },
     {
       name: 'blogs',
-      title: 'Featured Restaurants',
+      title: 'Featured Projects',
       type: 'array',
       of: [
         {
@@ -28,7 +28,7 @@ export default {
     },
     {
       name: 'category',
-      title: 'Featured Top Categories',
+      title: 'Featured Services',
       type: 'array',
       of: [
         {
