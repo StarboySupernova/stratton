@@ -6,7 +6,7 @@ import SEO from '../components/seo';
 
 const IndexPage = () => (
   <>
-    <SEO title="DUKE HOME" />
+    <SEO title="Mwenje Geology" />
     <HeroSection />
     <div className="container">
       <FeaturedBlogs />
