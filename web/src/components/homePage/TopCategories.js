@@ -25,12 +25,17 @@ function TopCategories() {
   const categories = data.allSanityFeatured.nodes[0].category;
   return (
     <TopCategoriesStyles>
-      <SectionTitle>Top Categories</SectionTitle>
+      <SectionTitle>Our Expertise</SectionTitle>
       <ParagraphText className="info">
-        Elevate your business in the digital age with our cutting-edge tech
-        solutions! Create your success story today! Our revolutionary software
-        wiil create a unified experience for yourself, and most importantly, for
-        your clients
+        Mwenje Geology and Environmental Consultants has always been one of the
+        leading geophysical contracting companies in Africa and is well equipped
+        to carry the out a wide range of geophysical methods. The company has
+        built a “hands on” experience of working in very diverse environments in
+        different countries and at different stages of development. Since its
+        establishment in Africa, Mwenje Geology and Environmental Consultants
+        has successfully completed more than 500 major geophysical projects in
+        Sub-Saharan Africa, notably Botswana, Zambia, Mozambique, Malawi,
+        Uganda, Tanzania, DRC, Zimbabwe, Kenya and Mauritius.
       </ParagraphText>
       <CategoryGrid categories={categories} />
     </TopCategoriesStyles>

@@ -12,13 +12,15 @@ function Footer() {
       <div className="container">
         <Logo />
         <ParagraphText className="footer__text">
-          Duke's flagship product is a cutting-edge iOS application designed to
-          streamline the process of making reservations and ordering at
-          restaurants. Unlike traditional reservation apps, Duke goes beyond the
-          functional aspect and focuses on enhancing the overall dining
-          experience. Our software leverages advanced algorithms and user
-          preferences to recommend personalized dining options, curating
-          unforgettable moments for our clients.
+          We have built our legacy on being a guiding light through Earth's
+          depths, through the strategic, intuitive and calibrated illumination
+          of the underground darkness, with the ultimate aim of unveiling
+          Africa's mineral wealth. Balancing extraction with environmental
+          stewardship, we foster sustainability through technology, community,
+          and responsibility. With 20 years of expertise in Southern Africa,
+          East Africa, and the DRC, we provide mining solutions and uphold
+          environmental best practices. Our motto: Bringing Solutions and
+          Enlightenment to your BUSINESS
         </ParagraphText>
         <ul className="footer__menuList">
           {menu.map((item) => (
@@ -35,8 +37,8 @@ function Footer() {
           ))}
         </ul>
         <ParagraphText className="copyright">
-          © Duke Atlas (PTY) LTD | Est. 2022 | {new Date().getFullYear()}. All
-          rights reserved
+          © Mwenje Geology and Environmental Consultants (PTY) LTD |{' '}
+          {new Date().getFullYear()}| All rights reserved
         </ParagraphText>
       </div>
     </FooterStyles>
