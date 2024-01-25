@@ -15,9 +15,8 @@ export default {
     {
       title: 'Tag',
       name: 'slug',
-      type: 'slug', // slug is custom type in sanity
+      type: 'slug',
       options: {
-        /// to allow us to have a generate button which will use title to come up with a slug
         source: 'title',
         maxLength: 96,
       },
@@ -47,13 +46,13 @@ export default {
     {
       title: 'Cover Image',
       name: 'coverImage',
-      type: 'customImage', // this is a custom type we have created in this project. This was not imported directly in his document, we specify it in the schema
+      type: 'customImage',
     },
     {
       title: 'Excerpt',
       name: 'excerpt',
       type: 'normalText',
-      description: 'An overview of your culinary offering',
+      description: 'Overview',
     },
     {
       title: 'Service Description',

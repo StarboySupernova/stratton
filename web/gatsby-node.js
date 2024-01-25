@@ -43,14 +43,6 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      allSanityReview {
-        nodes {
-          id
-          slug {
-            current
-          }
-        }
-      }
     }
   `);
 

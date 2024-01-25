@@ -3,12 +3,12 @@ const sanityConfig = require('./sanity-config.js');
 
 module.exports = {
   siteMetadata: {
-    title: `Duke Atlas`,
-    siteUrl: `https://dukeatlas.netlify.com`,
-    description: `Curating premium culinary experiences.`,
+    title: `Mwenje Geology`,
+    siteUrl: `https://mwenjegeology.netlify.com`,
+    description: `Bringing Africa's mineral wealth to your enlightenment`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`, // SEO plugin
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -28,7 +28,6 @@ module.exports = {
         engine: `flexsearch`,
         engineOptions: {
           tokenize: 'forward',
-          /* allows partial search matches. forward config parameter allows searching partial matches that start with search string, reverse allows searching partial matches that end with the search string, full allows bi-directional searches of partial matches that contain the search string */
         },
         query: `
         {
