@@ -44,17 +44,26 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
+    allSanityService {
+      nodes {
+        id
+        slug {
+          current
+        }
+      }
+    }
   `);
 
   if (result.errors) throw result.errors; /// Gatbsy will handle errors thrown here
   const blogs = result.data.allSanityBlog.nodes;
   const categories = result.data.allSanityCategory.nodes;
   const authors = result.data.allSanityAuthor.nodes;
+  const services = result.data.allSanityService.node;
 
   // creating single blog pages
   blogs.forEach((blog) => {
     createPage({
-      path: `/restaurants/${blog.slug.current}`,
+      path: `/projects/${blog.slug.current}`,
       component: singleBlogTemplate, // component path
       context: { id: blog.id },
     });
@@ -72,9 +81,18 @@ exports.createPages = async ({ graphql, actions }) => {
   // single Author pages
   authors.forEach((author) => {
     createPage({
-      path: `/restaurateurs/${author.slug.current}`,
+      path: `/authors/${author.slug.current}`,
       component: singleAuthorTemplate,
       context: { id: author.id },
+    });
+  });
+
+  // creating single service pages
+  services.forEach((service) => {
+    createPage({
+      path: `/services/${service.slug.current}`,
+      component: singleCategoryTemplate,
+      context: { id: service.id },
     });
   });
 
@@ -118,6 +136,21 @@ exports.createPages = async ({ graphql, actions }) => {
         limit: postsPerPage,
         offset: index * postsPerPage,
         numberOfPages: totalAuthorListPages,
+        currentPage: index + 1,
+      },
+    });
+  });
+
+  // service paginated pages
+  const totalServiceListPages = Math.ceil(services.length / postsPerPage);
+  Array.from({ length: totalServiceListPages }).forEach((_, index) => {
+    createPage({
+      path: index === 0 ? `/services` : `/services/${index + 1}`,
+      component: categoryListTemplate,
+      context: {
+        limit: postsPerPage,
+        offset: index * postsPerPage,
+        numberOfPages: totalServiceListPages,
         currentPage: index + 1,
       },
     });
