@@ -8,6 +8,7 @@ import blog from './documents/blog';
 import category from './documents/category';
 import author from './documents/author';
 import featured from './documents/featured';
+import service from './documents/service';
 
 // import object
 import richText from './objects/richText';
@@ -22,6 +23,7 @@ export default createSchema({
     category,
     author,
     featured,
+    service,
 
     // object schemas
     normalText,
