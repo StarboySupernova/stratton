@@ -9,8 +9,8 @@ const IndexPage = () => (
     <SEO title="Mwenje Geology" />
     <HeroSection />
     <div className="container">
-      <FeaturedBlogs />
       <TopCategories />
+      <FeaturedBlogs />
     </div>
   </>
 );

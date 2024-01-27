@@ -22,11 +22,20 @@ function HeroSection() {
               years, with a vast field of experience working in all of Southern
               Africa, East africa and the D.R.C.
             </ParagraphText>
-            <SectionTitle>Our Mission</SectionTitle>
+            <SectionTitle>Our Expertise</SectionTitle>
+            <ParagraphText className="hero__text">
+              Mwenje Geology and Environmental Consultants has always been one
+              leading geophysical contracting companies in Africa and is well
+              equipped to carry the out a wide range of geophysical methods.
+            </ParagraphText>
             <ParagraphText>
-              Providing breakthrough innovative value-driven mining solutions,
-              intelligent service in mining development and in the penetration
-              of the mining and mineral industry.
+              The company has built a “hands on” experience of working in very
+              diverse environments in different countries and at different
+              stages of development. Since its establishment in Africa, Mwenje
+              Geology and Environmental Consultants has successfully completed
+              more than 500 major geophysical projects in Sub-Saharan Africa,
+              notably Botswana, Zambia, Mozambique, Malawi, Uganda, Tanzania,
+              DRC, Zimbabwe, Kenya and Mauritius.
             </ParagraphText>
             <Button to="/restaurants" tag={Link} className="hero__button">
               Explore Our Services
@@ -41,7 +50,17 @@ function HeroSection() {
               objectPosition="50% 30%"
             />
           </div>
+        </div>
+      </div>
+    </HeroSectionStyles>
+  );
+}
 
+export default HeroSection;
+
+/* 
+    <div className="container">
+        <div className="container">
           <div className="right">
             <h1 className="hero__heading">Our Mission</h1>
             <ParagraphText>
@@ -76,8 +95,4 @@ function HeroSection() {
           </div>
         </div>
       </div>
-    </HeroSectionStyles>
-  );
-}
-
-export default HeroSection;
+     */
