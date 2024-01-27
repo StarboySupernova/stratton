@@ -30,6 +30,12 @@ export default {
       title: 'Description',
       type: 'normalText',
     },
+    {
+      title: 'Category',
+      name: 'category',
+      type: 'reference',
+      to: [{ type: 'category' }],
+    },
   ],
   preview: {
     select: {
