@@ -53,10 +53,11 @@ export default FeaturedBlogs;
 
 Patricia is not only well acquainted in Environmental Management processes in compliance to internationally best management Practices including the Equator Principles,World Bank, IFC Performance Standards and Environmental, Health and Safety Guidelines but assesses audits compliance avoiding any liability to the organisation .She has10 years of experience in the GIS, Environmental and Social Impact Assessments Occupational Health and safety and has been involved in formal environmental authorization processes for the residential, commercial, industrial and mining sectors,including World Bank Category ‘A’ environmental impact assessments She has also been active in Projects that require Community liaison and Public Participation in various projects in Southern East and West Africa. Patricia has the drive the business acumen and natural strategies to drive any company’s goals to realisation */
 // categories
-// Environmental Analysis, Consultancy, Impact Assessment & Non-governmental Charitable Hospitality
-// Occupational Health and Safety
-//  Policies and Governance
-// Project Licensing
+// Mwenje Environment
+// Mwenje Geology
+// Mwenje Health and Safety
+// Mwenje Community
+// services shall be new schemas in sanity
 
 // principles
 /// Equator Principles,World Bank, IFC Performance Standards and Environmental, Health and Safety Guidelines, audit assessment,  GIS, Environmental and Social Impact Assessments Occupational Health and safety
