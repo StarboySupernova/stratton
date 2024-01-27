@@ -106,7 +106,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const totalBlogListPages = Math.ceil(blogs.length / postsPerPage);
   Array.from({ length: totalBlogListPages }).forEach((_, index) => {
     createPage({
-      path: index === 0 ? `/restaurants` : `/restaurants/${index + 1}`,
+      path: index === 0 ? `/projects` : `/projects/${index + 1}`,
       component: blogListTemplate,
       context: {
         limit: postsPerPage,
@@ -136,7 +136,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const totalAuthorListPages = Math.ceil(authors.length / postsPerPage);
   Array.from({ length: totalAuthorListPages }).forEach((_, index) => {
     createPage({
-      path: index === 0 ? `/restaurateurs` : `/restaurateurs/${index + 1}`,
+      path: index === 0 ? `/authors` : `/authors/${index + 1}`,
       component: authorListTemplate,
       context: {
         limit: postsPerPage,
@@ -148,14 +148,14 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // service paginated pages
-  const totalServiceListPages = Math.ceil(services.length / postsPerPage);
+  const totalServiceListPages = Math.ceil(services.length / 7);
   Array.from({ length: totalServiceListPages }).forEach((_, index) => {
     createPage({
       path: index === 0 ? `/services` : `/services/${index + 1}`,
       component: serviceListTemplate,
       context: {
-        limit: postsPerPage,
-        offset: index * postsPerPage,
+        limit: 7,
+        offset: index * 7,
         numberOfPages: totalServiceListPages,
         currentPage: index + 1,
       },
