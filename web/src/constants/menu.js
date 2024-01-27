@@ -4,17 +4,17 @@ export const menu = [
     path: '/',
   },
   {
-    title: 'Restaurants',
+    title: 'Our Work & Projects',
     path: '/restaurants',
   },
   {
     title: 'Categories',
     path: '/categories',
   },
-  {
-    title: 'Restaurateurs',
-    path: '/restaurateurs',
-  },
+  // { should add authors button somewhere in DOM but not in main menu
+  //   title: 'Restaurateurs',
+  //   path: '/restaurateurs',
+  // },
   {
     title: 'Company Background',
     path: '/reviews', // should use herosection to build this page
