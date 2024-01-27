@@ -6,9 +6,15 @@ exports.createPages = async ({ graphql, actions }) => {
   const singleCategoryTemplate = require.resolve(
     './src/templates/single-category.js'
   );
+  const singleServiceTemplate = require.resolve(
+    './src/templates/single-service.js'
+  );
   const blogListTemplate = require.resolve('./src/templates/blog-list.js');
   const categoryListTemplate = require.resolve(
     './src/templates/category-list.js'
+  );
+  const serviceListTemplate = require.resolve(
+    './src/templates/service-list.js'
   );
   const singleAuthorTemplate = require.resolve(
     './src/templates/single-author.js'
@@ -91,7 +97,7 @@ exports.createPages = async ({ graphql, actions }) => {
   services.forEach((service) => {
     createPage({
       path: `/services/${service.slug.current}`,
-      component: singleCategoryTemplate,
+      component: singleServiceTemplate,
       context: { id: service.id },
     });
   });
@@ -146,7 +152,7 @@ exports.createPages = async ({ graphql, actions }) => {
   Array.from({ length: totalServiceListPages }).forEach((_, index) => {
     createPage({
       path: index === 0 ? `/services` : `/services/${index + 1}`,
-      component: categoryListTemplate,
+      component: serviceListTemplate,
       context: {
         limit: postsPerPage,
         offset: index * postsPerPage,
