@@ -29,13 +29,13 @@ function HeroSection() {
               equipped to carry the out a wide range of geophysical methods.
             </ParagraphText>
             <ParagraphText>
-              The company has built a “hands on” experience of working in very
-              diverse environments in different countries and at different
-              stages of development. Since its establishment in Africa, Mwenje
-              Geology and Environmental Consultants has successfully completed
-              more than 500 major geophysical projects in Sub-Saharan Africa,
-              notably Botswana, Zambia, Mozambique, Malawi, Uganda, Tanzania,
-              DRC, Zimbabwe, Kenya and Mauritius.
+              The firm has built & gained practical "hands on" experience
+              environments across different countries and developmental stages.
+              Mwenje Geology and Environmental Consultants, since being
+              established in Africa, has accomplished over 500 significant
+              geophysical projects in Sub-Saharan Africa. Notable locations
+              Botswana, Zambia, Mozambique, Malawi, Uganda, Tanzania, DRC,
+              Zimbabwe, Kenya, and Mauritius.
             </ParagraphText>
             <Button to="/restaurants" tag={Link} className="hero__button">
               Explore Our Services

@@ -16,7 +16,7 @@ export const menu = [
     path: '/restaurateurs',
   },
   {
-    title: 'Reviews',
-    path: '/reviews',
+    title: 'Company Background',
+    path: '/reviews', // should use herosection to build this page
   },
 ];
