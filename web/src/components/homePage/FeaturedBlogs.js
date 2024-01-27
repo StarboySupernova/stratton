@@ -56,10 +56,11 @@ Patricia is not only well acquainted in Environmental Management processes in co
 // Environmental Analysis, Consultancy, Impact Assessment & Non-governmental Charitable Hospitality
 // Occupational Health and Safety
 //  Policies and Governance
+// Project Licensing
 
 // principles
 /// Equator Principles,World Bank, IFC Performance Standards and Environmental, Health and Safety Guidelines, audit assessment,  GIS, Environmental and Social Impact Assessments Occupational Health and safety
 /// Community liaison and Public Participation
 
 /// colors
-/// #1ff4b4, #2c313e
+/// #1ff4b4, #2c313e, #cbdd46
