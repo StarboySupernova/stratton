@@ -27,7 +27,7 @@ export default {
       ],
     },
     {
-      name: 'service',
+      name: 'category',
       title: 'Featured Services',
       type: 'array',
       of: [

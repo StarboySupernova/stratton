@@ -39,8 +39,8 @@ function FeaturedBlogs() {
     <FeaturedBlogsStyles>
       <SectionTitle>Featured</SectionTitle>
       <ParagraphText className="featuredBlogs__text">
-        Delve into the culinary arts at your leisure, with our curated picks of
-        the day
+        Discover our areas of expertise, and in-depth project curation and
+        deployment
       </ParagraphText>
       <BlogGrid blogs={featuredBlogs} />
     </FeaturedBlogsStyles>
