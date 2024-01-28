@@ -49,28 +49,28 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-    }
-    allSanityService {
-      nodes {
-        id
-        slug {
-          current
+      allSanityService {
+        nodes {
+          id
+          slug {
+            current
+          }
         }
       }
     }
   `);
 
-  if (result.errors) throw result.errors; /// Gatbsy will handle errors thrown here
+  if (result.errors) throw result.errors;
   const blogs = result.data.allSanityBlog.nodes;
   const categories = result.data.allSanityCategory.nodes;
   const authors = result.data.allSanityAuthor.nodes;
-  const services = result.data.allSanityService.node;
+  const services = result.data.allSanityService.nodes;
 
   // creating single blog pages
   blogs.forEach((blog) => {
     createPage({
       path: `/projects/${blog.slug.current}`,
-      component: singleBlogTemplate, // component path
+      component: singleBlogTemplate,
       context: { id: blog.id },
     });
   });
@@ -93,7 +93,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  // creating single service pages
+  //  creating single service pages
   services.forEach((service) => {
     createPage({
       path: `/services/${service.slug.current}`,
@@ -113,7 +113,7 @@ exports.createPages = async ({ graphql, actions }) => {
         offset: index * postsPerPage,
         numberOfPages: totalBlogListPages,
         currentPage: index + 1,
-      } /* Context data for this page. Passed as props to the component this.props.pageContext as well as to the graphql query as graphql arguments */,
+      },
     });
   });
 

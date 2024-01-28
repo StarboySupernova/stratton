@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: `Mwenje Geology`,
     siteUrl: `https://mwenjegeology.netlify.com`,
-    description: `Bringing Africa's mineral wealth to your enlightenment`,
+    description: `Illuminating Africa's mineral wealth for your enlightenment`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

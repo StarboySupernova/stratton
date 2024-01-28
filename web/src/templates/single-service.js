@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import BlogGrid from '../components/blog/BlogGrid';
 import MyPortableText from '../components/MyPortableText';
 import PageHeader from '../components/PageHeader';
 import PageSpace from '../components/PageSpace';
@@ -20,34 +19,11 @@ export const query = graphql`
         alt
       }
     }
-    allSanityBlog(filter: { services: { elemMatch: { id: { eq: $id } } } }) {
-      nodes {
-        id
-        title
-        publishedAt
-        slug {
-          current
-        }
-        categories {
-          title
-          slug {
-            current
-          }
-        }
-        coverImage {
-          alt
-          asset {
-            gatsbyImageData
-          }
-        }
-      }
-    }
   }
 `;
 
 function SingleService({ data }) {
-  const service = data.sanityCategory;
-  const blogs = data.allSanityBlog.nodes;
+  const service = data.sanityService;
 
   return (
     <PageSpace top={80} bottom={100}>
@@ -62,7 +38,6 @@ function SingleService({ data }) {
               className="coverImage"
             />
           </PageHeader>
-          <BlogGrid blogs={blogs} />
         </div>
       </SingleCategoryStyles>
     </PageSpace>

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import PageSpace from '../components/PageSpace';
 import SEO from '../components/seo';
 import PageHeader from '../components/PageHeader';
-import CategoryGrid from '../components/category/CategoryGrid';
+import ServiceGrid from '../components/category/ServiceGrid';
 import Pagination from '../components/Pagination';
 
 export const ServiceListQuery = graphql`
@@ -38,7 +38,7 @@ function Services({ data, pageContext }) {
             title="All Services"
             description="Elevate your projects with Mwenje Geology and Environmental Consultants, your go-to partner for comprehensive and expert geophysical solutions across diverse environments in Sub-Saharan Africa, ensuring success at every stage of development."
           />
-          <CategoryGrid categories={services} />
+          <ServiceGrid services={services} />
           {numberOfPages > 1 && (
             <Pagination
               currentPage={currentPage}

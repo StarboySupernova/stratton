@@ -5,11 +5,11 @@ export const menu = [
   },
   {
     title: 'Our Work & Projects',
-    path: '/restaurants',
+    path: '/projects',
   },
   {
-    title: 'Categories',
-    path: '/categories',
+    title: 'Services',
+    path: '/services',
   },
   // { should add authors button somewhere in DOM but not in main menu
   //   title: 'Restaurateurs',
@@ -17,6 +17,6 @@ export const menu = [
   // },
   {
     title: 'Company Background',
-    path: '/reviews', // should use herosection to build this page
+    path: '/', // should use herosection to build this page
   },
 ];
