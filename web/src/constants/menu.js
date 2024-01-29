@@ -11,12 +11,12 @@ export const menu = [
     title: 'Services',
     path: '/services',
   },
-  // { should add authors button somewhere in DOM but not in main menu
-  //   title: 'Restaurateurs',
-  //   path: '/restaurateurs',
-  // },
   {
     title: 'Mission & Background',
-    path: '/mwenje-background', // should use herosection to build this page
+    path: '/mwenje-background', 
+  },
+  { 
+    title: 'About',
+    path: '/authors',
   },
 ];
