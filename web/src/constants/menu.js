@@ -13,9 +13,9 @@ export const menu = [
   },
   {
     title: 'Mission & Background',
-    path: '/mwenje-background', 
+    path: '/mwenje-background',
   },
-  { 
+  {
     title: 'About',
     path: '/authors',
   },
