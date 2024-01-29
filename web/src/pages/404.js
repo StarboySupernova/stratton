@@ -5,8 +5,6 @@ import ParagraphText from '../components/typography/ParagraphText';
 import { SectionTitle } from '../components/typography/Title';
 import { NotFoundPageStyles } from '../styles/NotFoundPageStyles';
 
-/* try removing braces on Go Back To to see what happens */
-
 function NotFoundPage() {
   return (
     <PageSpace>

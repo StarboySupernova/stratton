@@ -37,6 +37,10 @@ function Footer() {
           ))}
         </ul>
         <ParagraphText className="copyright">
+          132 2nd Street Ext Belgravia, Harare, Zimbabwe | 132 Blue Stream
+          Estate, Pretorious Park, Pretoria East, South Africa
+        </ParagraphText>
+        <ParagraphText className="copyright">
           © Mwenje Geology and Environmental Consultants (PTY) LTD |{' '}
           {new Date().getFullYear()}| All rights reserved
         </ParagraphText>

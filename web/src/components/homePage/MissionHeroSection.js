@@ -30,8 +30,8 @@ function MissionHeroSection() {
               advice on business development in mining, mineral processing,
               marketing, and trade.
             </ParagraphText>
-            <Button to="/restaurants" tag={Link} className="hero__button">
-              Company Background
+            <Button to="/" tag={Link} className="hero__button">
+              Home
             </Button>
           </div>
           <div className="left">

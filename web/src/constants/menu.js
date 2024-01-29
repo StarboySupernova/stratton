@@ -16,7 +16,7 @@ export const menu = [
   //   path: '/restaurateurs',
   // },
   {
-    title: 'Company Background',
-    path: '/', // should use herosection to build this page
+    title: 'Mission & Background',
+    path: '/mwenje-background', // should use herosection to build this page
   },
 ];
