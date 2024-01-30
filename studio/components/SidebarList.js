@@ -3,7 +3,7 @@ import { MdStar } from 'react-icons/md';
 
 function SidebarList() {
   return S.list()
-    .title('Duke')
+    .title('Mwenje')
     .items([
       S.listItem()
         .title('Featured')

@@ -8,7 +8,7 @@ function Logo() {
   const height = 50;
   return (
     <LogoStyles to="/">
-      <StaticImage src="../images/duke.jpg" width={width} height={height} />
+      <StaticImage src="../images/mwenje.jpg" width={width} height={height} />
     </LogoStyles>
   );
 }

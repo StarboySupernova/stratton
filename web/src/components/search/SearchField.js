@@ -7,7 +7,7 @@ function SearchField({ value, setValue, onFocus }) {
     <SearchFieldStyles>
       <input
         type="text"
-        placeholder="Duke Search"
+        placeholder="Mwenje Search"
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onFocus={onFocus && onFocus}

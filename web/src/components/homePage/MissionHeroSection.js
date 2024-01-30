@@ -1,9 +1,7 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Link } from 'gatsby';
 import { HeroSectionStyles } from '../../styles/homePage/HeroSectionStyles';
 import ParagraphText from '../typography/ParagraphText';
-import Button from '../buttons/Button';
 import { SectionTitle } from '../typography/Title';
 
 function MissionHeroSection() {
@@ -11,7 +9,7 @@ function MissionHeroSection() {
     <HeroSectionStyles>
       <div className="container">
         <div className="container">
-          <div className="right">
+          <div className="left">
             <h1 className="hero__heading">Our Mission</h1>
             <ParagraphText>
               Providing breakthrough innovative value-driven mining solutions,
@@ -20,8 +18,8 @@ function MissionHeroSection() {
             </ParagraphText>
             <SectionTitle>Business Description</SectionTitle>
             <ParagraphText className="hero__text">
-              Mwenje Minerals is an important arm in the Mining Industry in
-              Africa, in that we provide state of the art expertise in providing
+              Mwenje Minerals & Environment is an important arm in the Mining
+              Industry in Africa, in that we provide state of the art expertise
               a potential mine owner with advice, guidance, and technical
               service on how to set up a mine and as well make his or or her
               idea come to realisation. Functioning as a consultancy firm, we
@@ -30,14 +28,11 @@ function MissionHeroSection() {
               advice on business development in mining, mineral processing,
               marketing, and trade.
             </ParagraphText>
-            <Button to="/" tag={Link} className="hero__button">
-              Home
-            </Button>
           </div>
-          <div className="left">
+          <div className="right">
             <StaticImage
               className="hero__image"
-              src="../../images/tunnel.jpg"
+              src="../../images/guys.jpg"
               alt="mwenje"
               placeholder="blurred"
               objectPosition="50% 30%"

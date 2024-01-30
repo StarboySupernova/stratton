@@ -1,6 +1,6 @@
-![Duke-Atlas](./banner.png)
+![Mwenje-Geology](./mwenje.png)
 
-# Duke Atlass. By Christian Simbarashe Dombodzvuku
+# Mwenje Geology. By Christian Simbarashe Dombodzvuku
 
 A complete full-stack web-app created with `JAMstack`. ([Gatsby.js](https://www.gatsbyjs.org/) & [Sanity.io](https://sanity.io)).
 
@@ -31,7 +31,6 @@ A complete full-stack web-app created with `JAMstack`. ([Gatsby.js](https://www.
   - Studio Customization
 - [React-PortableText](https://github.com/portabletext/react-portabletext)
 - [Axios](https://www.npmjs.com/package/axios)
-- Many More...
 
 ## Tools Used
 

@@ -9,14 +9,14 @@ import { Title } from '../typography/Title';
 function BlogItem({ path, title, image, categories, publishedAt }) {
   return (
     <BlogItemStyles>
-      <Link to={`/restaurants/${path}`}>
+      <Link to={`/projects/${path}`}>
         <GatsbyImage
           image={image.imageData}
           alt={image.altText}
           className="img"
         />
       </Link>
-      <Link to={`/restaurants/${path}`}>
+      <Link to={`/projects/${path}`}>
         <Title className="title">{title}</Title>
       </Link>
       {publishedAt && (

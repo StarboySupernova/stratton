@@ -45,7 +45,7 @@ function SingleBlog({ data }) {
   const blog = data.sanityBlog;
   return (
     <SingleBlogStyles>
-      <SEO title={`Duke-${blog.title}`} />
+      <SEO title={`Mwenje-${blog.title}`} />
       <PageSpace top={80} bottom={100}>
         <div className="container">
           <div className="blog-header">
@@ -74,7 +74,7 @@ function SingleBlog({ data }) {
             </ParagraphText>
             <ParagraphText className="author">
               <FiUser />
-              <Link to={`/restaurateurs/${blog.author.slug.current}`}>
+              <Link to={`/authors/${blog.author.slug.current}`}>
                 {blog.author.name}
               </Link>
             </ParagraphText>

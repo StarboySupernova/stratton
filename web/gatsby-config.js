@@ -3,8 +3,8 @@ const sanityConfig = require('./sanity-config.js');
 
 module.exports = {
   siteMetadata: {
-    title: `Mwenje Geology`,
-    siteUrl: `https://mwenjegeology.netlify.com`,
+    title: `Mwenje Minerals`,
+    siteUrl: `https://mwenjeminerals.netlify.com`,
     description: `Illuminating Africa's mineral wealth for your enlightenment`,
   },
   plugins: [

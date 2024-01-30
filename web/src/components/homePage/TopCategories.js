@@ -1,7 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { TopCategoriesStyles } from '../../styles/homePage/TopCategoriesStyles';
-import CategoryGrid from '../category/CategoryGrid';
+// import CategoryGrid from '../category/CategoryGrid';
+import ServiceGrid from '../category/ServiceGrid';
 import ParagraphText from '../typography/ParagraphText';
 import { SectionTitle } from '../typography/Title';
 
@@ -31,7 +32,7 @@ function TopCategories() {
         intelligent service in mining development and in the penetration of the
         of the mining and mineral industry.
       </ParagraphText>
-      <CategoryGrid categories={categories} />
+      <ServiceGrid services={categories} />
     </TopCategoriesStyles>
   );
 }

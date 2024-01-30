@@ -11,7 +11,7 @@ function BlogSearchResultItem({ blog }) {
   const { closeSearchModal } = useContext(SearchModalContext);
   return (
     <SearchResultItemStyles
-      to={`/blogs/${blog.slug.current}`}
+      to={`/projects/${blog.slug.current}`}
       onClick={() => closeSearchModal()}
     >
       <GatsbyImage

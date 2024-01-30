@@ -24,7 +24,7 @@ export default styled.header`
       li {
         &:hover {
           a {
-            background: var(--black-2);
+            background: #7f9f17;
           }
         }
         a {
@@ -48,7 +48,7 @@ export default styled.header`
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: var(--black-2);
+      background-color: #7f9f17;
     }
   }
   .mobileMenuCloseBtn,

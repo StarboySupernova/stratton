@@ -32,16 +32,16 @@ function AuthorList({ data, pageContext }) {
 
   return (
     <PageSpace top={80} bottom={100}>
-      <SEO title="Restaurateurs" />
+      <SEO title="About Us & Our Team" />
       <div className="container">
         <PageHeader
-          title="All Restaurateurs"
-          description="Indulge & explore your Epicurean tastes with the absolute best restaurateurs we have to offer. View catalogues, menus and offerings, all in one place..."
+          title="All Personnel"
+          description="Our dedicated, highly trained staff with years of deep, relevant experience whose sole task is to bring your project to enlightened fruition"
         />
         <AuthorGrid authors={authors} />
         {numberOfPages > 1 && (
           <Pagination
-            baseURL="/restaurateurs"
+            baseURL="/authors"
             currentPage={currentPage}
             numberOfPages={numberOfPages}
           />

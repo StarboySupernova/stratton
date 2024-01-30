@@ -10,7 +10,7 @@ import { SearchModalContext } from '../contexts/searchModalContext';
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const { openSearchModal } = useContext(SearchModalContext); // extracting method from context, given the extraction in SearchModal.js, it seems the extraction is dynamiccally typed, and will correspond with the property name or method name inside our context
+  const { openSearchModal } = useContext(SearchModalContext);
 
   useEffect(() => {
     if (isNavOpen) {

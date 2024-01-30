@@ -18,22 +18,22 @@ export const socialLinks = [
   },
   {
     name: 'facebook',
-    url: 'https://www.facebook.com/MwenjeGeology',
+    url: 'https://www.facebook.com/MwenjeMinerals',
     icon: <FaFacebook />,
   },
   {
     name: 'twitter',
-    url: 'https://www.twitter.com/Mwenje_Geology',
+    url: 'https://www.twitter.com/Mwenje_Minerals',
     icon: <FaTwitter />,
   },
   {
     name: 'Apple',
-    url: 'https://www.apple.com/Mwenje_Geology_iOS_App',
+    url: 'https://www.apple.com/Mwenje_Minerals_iOS_App',
     icon: <DiApple />,
   },
   {
     name: 'Android',
-    url: 'https://www.play.google.com/Mwenje_Geology_Android_App',
+    url: 'https://www.play.google.com/Mwenje_Minerals_Android_App',
     icon: <FcAndroidOs />,
   },
 ];

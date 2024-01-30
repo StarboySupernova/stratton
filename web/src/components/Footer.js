@@ -41,7 +41,7 @@ function Footer() {
           Estate, Pretorious Park, Pretoria East, South Africa
         </ParagraphText>
         <ParagraphText className="copyright">
-          © Mwenje Geology and Environmental Consultants (PTY) LTD |{' '}
+          © Mwenje Minerals and Environment (PTY) LTD |{' '}
           {new Date().getFullYear()}| All rights reserved
         </ParagraphText>
       </div>
