@@ -23,7 +23,7 @@ function TopCategories() {
       }
     }
   `);
-  const categories = data.allSanityFeatured.nodes[0].category;
+  // const categories = data.allSanityFeatured.nodes[0].category;
   return (
     <TopCategoriesStyles>
       <SectionTitle>Our Mission</SectionTitle>
@@ -32,9 +32,10 @@ function TopCategories() {
         intelligent service in mining development and in the penetration of the
         of the mining and mineral industry.
       </ParagraphText>
-      <ServiceGrid services={categories} />
     </TopCategoriesStyles>
   );
 }
 
 export default TopCategories;
+
+/// <ServiceGrid services={categories} />

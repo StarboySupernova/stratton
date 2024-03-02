@@ -52,3 +52,18 @@ function AuthorList({ data, pageContext }) {
 }
 
 export default AuthorList;
+
+/* Address
+
+1954 intakaza & Edmond Shezi str Mayibuye
+Commercia
+Midrand
+1685
+South Africa
+076 150 1409
+
+write google review - https://search.google.com/local/writereview?placeid=ChIJ67iW6-ptlR4RtTWSXggOE0A
+read google reviews - https://search.google.com/local/reviews?placeid=ChIJ67iW6-ptlR4RtTWSXggOE0A
+
+
+*/

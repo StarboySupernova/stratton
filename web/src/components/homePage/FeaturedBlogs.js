@@ -34,7 +34,7 @@ function FeaturedBlogs() {
       }
     }
   `);
-  const featuredBlogs = data.allSanityFeatured.nodes[0].blogs;
+  // const featuredBlogs = data.allSanityFeatured.nodes[0].blogs;
   return (
     <FeaturedBlogsStyles>
       <SectionTitle>Featured</SectionTitle>
@@ -42,7 +42,6 @@ function FeaturedBlogs() {
         Discover our areas of expertise, and in-depth project curation and
         deployment
       </ParagraphText>
-      <BlogGrid blogs={featuredBlogs} />
     </FeaturedBlogsStyles>
   );
 }
@@ -50,4 +49,4 @@ function FeaturedBlogs() {
 export default FeaturedBlogs;
 
 /// colors
-/// #1ff4b4 - light green, #2c313e - dark bluish, #cbdd46 - gold
+/// #1ff4b4 - light green, #2c313e - dark bluish, #cbdd46 - gold <BlogGrid blogs={featuredBlogs} />

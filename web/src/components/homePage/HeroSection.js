@@ -5,6 +5,7 @@ import { HeroSectionStyles } from '../../styles/homePage/HeroSectionStyles';
 import ParagraphText from '../typography/ParagraphText';
 import Button from '../buttons/Button';
 import { SectionTitle } from '../typography/Title';
+import { StripeContent, StripeElement } from '../../templates/stripe-element';
 
 function HeroSection() {
   return (
@@ -44,7 +45,7 @@ function HeroSection() {
           <div className="right">
             <StaticImage
               className="hero__image"
-              src="../../images/her3.jpg"
+              src="../../images/VR.jpg"
               alt="mwenje"
               placeholder="blurred"
               objectPosition="50% 30%"
@@ -52,6 +53,18 @@ function HeroSection() {
           </div>
         </div>
       </div>
+      <StripeElement>
+        {/* <StripeContent>
+          <StaticImage
+            className="livestream-wave4"
+            src="../../images/livestream-wave4.svg"
+          />
+          <StaticImage
+            className="livestream-wave4-02"
+            src="../../images/livestream-wave4.svg"
+          />
+        </StripeContent> */}
+      </StripeElement>
     </HeroSectionStyles>
   );
 }
