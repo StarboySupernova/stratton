@@ -8,7 +8,7 @@ import { SectionTitle } from '../typography/Title';
 function FeaturedBlogs() {
   const data = useStaticQuery(graphql`
     {
-      allSanityFeatured(filter: { _id: { eq: "featuredItems" } }) {
+      allSanitySpotlight(filter: { _id: { eq: "spotlightItems" } }) {
         nodes {
           blogs {
             id
@@ -34,14 +34,17 @@ function FeaturedBlogs() {
       }
     }
   `);
-  // const featuredBlogs = data.allSanityFeatured.nodes[0].blogs;
+  const spotlightBlogs = data.allSanitySpotlight.nodes[0].blogs;
   return (
     <FeaturedBlogsStyles>
-      <SectionTitle>Featured</SectionTitle>
+      <SectionTitle>Spotlight & Trending Posts</SectionTitle>
       <ParagraphText className="featuredBlogs__text">
-        Discover our areas of expertise, and in-depth project curation and
-        deployment
+        {new Date().getDate()}
+        {new Date().getDay()}
+        {new Date().getMonth().toLocaleString()}
+        {new Date().getFullYear()}
       </ParagraphText>
+      <BlogGrid blogs={spotlightBlogs} />
     </FeaturedBlogsStyles>
   );
 }
@@ -49,4 +52,4 @@ function FeaturedBlogs() {
 export default FeaturedBlogs;
 
 /// colors
-/// #1ff4b4 - light green, #2c313e - dark bluish, #cbdd46 - gold <BlogGrid blogs={featuredBlogs} />
+/// #1ff4b4 - light green, #2c313e - dark bluish, #cbdd46 - gold

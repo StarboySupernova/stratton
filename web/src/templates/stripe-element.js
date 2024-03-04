@@ -60,3 +60,103 @@ export const StripeContent = styled.div`
     z-index: 1; // Set z-index for the background to be the bottom layer
   }
 `;
+
+export const Content = styled.span`
+  /* Content */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 23px;
+
+  width: 400px;
+  height: 385px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+`;
+
+export const Frame577 = styled.span`
+  /* Frame 577 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+
+  width: 140px;
+  height: 132px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+`;
+
+export const Pro = styled.p`
+  /* PRO */
+
+  width: 26px;
+  height: 19px;
+
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 130%;
+  /* or 19px */
+  text-transform: uppercase;
+
+  /* Text 2 (dark) */
+  color: rgba(255, 255, 255, 0.7);
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+`;
+
+export const Frame576 = styled.span`
+  /* Frame 576 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+
+  width: 140px;
+  height: 94px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+`;
+
+export const DollarSign = styled.p`
+  /* $ */
+
+  width: 20px;
+  height: 47px;
+
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 47px;
+  /* identical to box height */
+
+  /* Text (dark) */
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+`;

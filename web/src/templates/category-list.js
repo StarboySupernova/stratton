@@ -36,7 +36,7 @@ function Categories({ data, pageContext }) {
         <div className="container">
           <PageHeader
             title="All Categories"
-            description="Food offerings, designed with you in mind. As a black-owned startup, we are driven by a vision to revolutionize the industry while promoting diversity and inclusivity. All your favorites can be found here, from halaal to vegan choice, and everything else in-between"
+            description="Tailored service, designed & implemented with the client in mind"
           />
           <CategoryGrid categories={categories} />
           {numberOfPages > 1 && (

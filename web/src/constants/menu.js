@@ -4,19 +4,19 @@ export const menu = [
     path: '/',
   },
   {
-    title: 'Our Work & Projects',
-    path: '/projects',
+    title: 'Posts',
+    path: '/spotlight',
   },
   {
-    title: 'Services',
+    title: 'What We Offer',
     path: '/services',
   },
   {
-    title: 'Mission & Background',
-    path: '/mwenje-background',
+    title: 'Categories',
+    path: '/categories',
   },
   {
-    title: 'About',
-    path: '/authors',
+    title: 'Our Team',
+    path: '/team',
   },
 ];

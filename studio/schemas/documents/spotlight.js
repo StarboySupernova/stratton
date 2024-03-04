@@ -1,8 +1,8 @@
 import { MdStar } from 'react-icons/md';
 
 export default {
-  name: 'featured',
-  title: 'Featured',
+  name: 'spotlight',
+  title: 'Spotlight',
   type: 'document',
   icon: MdStar,
   fields: [
@@ -13,7 +13,7 @@ export default {
     },
     {
       name: 'blogs',
-      title: 'Featured Projects',
+      title: 'Spotlight',
       type: 'array',
       of: [
         {
@@ -28,7 +28,7 @@ export default {
     },
     {
       name: 'category',
-      title: 'Featured Services',
+      title: 'Top Services',
       type: 'array',
       of: [
         {

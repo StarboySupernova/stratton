@@ -36,12 +36,12 @@ function AuthorList({ data, pageContext }) {
       <div className="container">
         <PageHeader
           title="All Personnel"
-          description="Our dedicated, highly trained staff with years of deep, relevant experience whose sole task is to bring your project to enlightened fruition"
+          description="Our dedicated, highly trained staff with years of deep, relevant experience whose sole task is to seamlessly bring your project to fruition"
         />
         <AuthorGrid authors={authors} />
         {numberOfPages > 1 && (
           <Pagination
-            baseURL="/authors"
+            baseURL="/team"
             currentPage={currentPage}
             numberOfPages={numberOfPages}
           />

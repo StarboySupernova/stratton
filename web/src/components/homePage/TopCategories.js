@@ -9,7 +9,7 @@ import { SectionTitle } from '../typography/Title';
 function TopCategories() {
   const data = useStaticQuery(graphql`
     {
-      allSanityFeatured(filter: { _id: { eq: "featuredItems" } }) {
+      allSanitySpotlight(filter: { _id: { eq: "spotlightItems" } }) {
         nodes {
           category {
             id
@@ -23,19 +23,16 @@ function TopCategories() {
       }
     }
   `);
-  // const categories = data.allSanityFeatured.nodes[0].category;
+  const services = data.allSanitySpotlight.nodes[0].category;
   return (
     <TopCategoriesStyles>
-      <SectionTitle>Our Mission</SectionTitle>
+      <SectionTitle>Top Categories</SectionTitle>
       <ParagraphText>
-        Providing breakthrough innovative value-driven mining solutions,
-        intelligent service in mining development and in the penetration of the
-        of the mining and mineral industry.
+        Explore Internet Excellence: Your journey begins here with us
       </ParagraphText>
+      <ServiceGrid services={services} />
     </TopCategoriesStyles>
   );
 }
 
 export default TopCategories;
-
-/// <ServiceGrid services={categories} />

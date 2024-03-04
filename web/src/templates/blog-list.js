@@ -43,19 +43,19 @@ function Blogs({ data, pageContext }) {
 
   return (
     <>
-      <SEO title="Projects" />
+      <SEO title="Posts" />
       <PageSpace top={80} bottom={100}>
         <div className="container">
           <PageHeader
-            title="Our Work"
-            description="Mwenje Minerals, enlightening & illuminating Africa's mineral wealth..."
+            title="All Posts"
+            description="A timeline of our dedication to full client satisfaction"
           />
           <BlogGrid blogs={blogs} />
           {numberOfPages > 1 && (
             <Pagination
               currentPage={currentPage}
               numberOfPages={numberOfPages}
-              baseURL="/projects"
+              baseURL="/spotlight"
             />
           )}
         </div>

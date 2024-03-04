@@ -11,9 +11,9 @@
     "build": "sanity build"
   },
   "keywords": [
-    "sanity",
-    "mwenje",
-    "geology"
+    "Stepping Stones",
+    "internet",
+    "technology"
   ],
   "dependencies": {
     "@sanity/base": "^2.25.4",

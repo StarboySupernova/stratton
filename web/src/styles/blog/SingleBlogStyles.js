@@ -29,7 +29,18 @@ export const SingleBlogStyles = styled.div`
     a {
       color: var(--gray);
       &:hover {
+        padding: 4px;
         text-decoration: underline;
+        background: linear-gradient(
+          180deg,
+          rgba(24, 32, 79, 0.4) 0%,
+          rgba(24, 32, 79, 0.25) 100%
+        );
+        border: 0.5px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(20px);
+        /* Note: backdrop-filter has minimal browser support */
+        border-radius: 30px;
       }
     }
   }

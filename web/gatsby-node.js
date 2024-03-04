@@ -1,6 +1,6 @@
 /* creating pages programmatically instead of creating them in files isnde the Pages folder */
 exports.createPages = async ({ graphql, actions }) => {
-  const postsPerPage = parseInt(process.env.GATSBY_POST_PER_PAGE) || 10;
+  const postsPerPage = parseInt(process.env.GATSBY_POST_PER_PAGE) || 3;
   // resolving templates paths
   const singleBlogTemplate = require.resolve('./src/templates/single-blog.js');
   const singleCategoryTemplate = require.resolve(
@@ -69,7 +69,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // creating single blog pages
   blogs.forEach((blog) => {
     createPage({
-      path: `/projects/${blog.slug.current}`,
+      path: `/spotlight/${blog.slug.current}`,
       component: singleBlogTemplate,
       context: { id: blog.id },
     });
@@ -87,7 +87,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // single Author pages
   authors.forEach((author) => {
     createPage({
-      path: `/authors/${author.slug.current}`,
+      path: `/team/${author.slug.current}`,
       component: singleAuthorTemplate,
       context: { id: author.id },
     });
@@ -106,7 +106,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const totalBlogListPages = Math.ceil(blogs.length / postsPerPage);
   Array.from({ length: totalBlogListPages }).forEach((_, index) => {
     createPage({
-      path: index === 0 ? `/projects` : `/projects/${index + 1}`,
+      path: index === 0 ? `/spotlight` : `/spotlight/${index + 1}`,
       component: blogListTemplate,
       context: {
         limit: postsPerPage,
@@ -136,7 +136,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const totalAuthorListPages = Math.ceil(authors.length / postsPerPage);
   Array.from({ length: totalAuthorListPages }).forEach((_, index) => {
     createPage({
-      path: index === 0 ? `/authors` : `/authors/${index + 1}`,
+      path: index === 0 ? `/team` : `/team/${index + 1}`,
       component: authorListTemplate,
       context: {
         limit: postsPerPage,

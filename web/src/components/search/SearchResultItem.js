@@ -11,7 +11,7 @@ function BlogSearchResultItem({ blog }) {
   const { closeSearchModal } = useContext(SearchModalContext);
   return (
     <SearchResultItemStyles
-      to={`/projects/${blog.slug.current}`}
+      to={`/spotlight/${blog.slug.current}`}
       onClick={() => closeSearchModal()}
     >
       <GatsbyImage
@@ -45,7 +45,7 @@ function AuthorSearchResultItem({ author }) {
   const { closeSearchModal } = useContext(SearchModalContext);
   return (
     <SearchResultItemStyles
-      to={`/authors/${author.slug.current}`}
+      to={`/team/${author.slug.current}`}
       onClick={() => closeSearchModal()}
     >
       <GatsbyImage

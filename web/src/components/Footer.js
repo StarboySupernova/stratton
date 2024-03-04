@@ -12,15 +12,13 @@ function Footer() {
       <div className="container">
         <Logo />
         <ParagraphText className="footer__text">
-          We have built our legacy on being a guiding light through Earth's
-          depths, through the strategic, intuitive and calibrated illumination
-          of the underground darkness, with the ultimate aim of unveiling
-          Africa's mineral wealth. Balancing extraction with environmental
-          stewardship, we foster sustainability through technology, community,
-          and responsibility. With 20 years of expertise in Southern Africa,
-          East Africa, and the DRC, we provide mining solutions and uphold
-          environmental best practices. Our motto: Bringing Solutions and
-          Enlightenment to your BUSINESS
+          "Thank you for choosing Stepping Stones Internet Cafe. Your digital
+          journey matters to us. Enjoy high-speed internet, computer services,
+          and collaborative spaces. Elevate your experience with software
+          setups, online courses, and more. Connect, create, and explore with
+          us. Your satisfaction is our priority. Connect with us again for a
+          seamless blend of technology and hospitality. Stepping Stones Internet
+          Cafe – Your pathway to a connected world."
         </ParagraphText>
         <ul className="footer__menuList">
           {menu.map((item) => (
@@ -37,11 +35,11 @@ function Footer() {
           ))}
         </ul>
         <ParagraphText className="copyright">
-          132 2nd Street Ext Belgravia, Harare, Zimbabwe | 132 Blue Stream
-          Estate, Pretorious Park, Pretoria East, South Africa
+          1954 Cnr Intakaza & Edmond Shezi Street, Mayibuye, Commercia, Midrand,
+          1685 South Africa
         </ParagraphText>
         <ParagraphText className="copyright">
-          © Mwenje Minerals and Environment (PTY) LTD |{' '}
+          © Stepping Stones Group Internet Cafe (PTY) LTD |{' '}
           {new Date().getFullYear()}| All rights reserved
         </ParagraphText>
       </div>

@@ -36,7 +36,7 @@ function Services({ data, pageContext }) {
         <div className="container">
           <PageHeader
             title="All Services"
-            description="Elevate your projects with Mwenje Minerals and Environment, your go-to partner for comprehensive and expert geophysical solutions across diverse environments in Sub-Saharan Africa, ensuring success at every stage of development."
+            description="Elevate your online journey with us. Connect, create, and thrive in a digital world. Your success, our priority."
           />
           <ServiceGrid services={services} />
           {numberOfPages > 1 && (
