@@ -8,11 +8,7 @@ export const menu = [
     path: '/spotlight',
   },
   {
-    title: 'What We Offer',
-    path: '/services',
-  },
-  {
-    title: 'Categories',
+    title: 'Our Services',
     path: '/categories',
   },
   {

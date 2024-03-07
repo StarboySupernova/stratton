@@ -12,13 +12,7 @@ function Footer() {
       <div className="container">
         <Logo />
         <ParagraphText className="footer__text">
-          "Thank you for choosing Stepping Stones Internet Cafe. Your digital
-          journey matters to us. Enjoy high-speed internet, computer services,
-          and collaborative spaces. Elevate your experience with software
-          setups, online courses, and more. Connect, create, and explore with
-          us. Your satisfaction is our priority. Connect with us again for a
-          seamless blend of technology and hospitality. Stepping Stones Internet
-          Cafe – Your pathway to a connected world."
+        "Thank you for choosing R-Speed Motors, where your automotive journey is our top priority. Experience excellence in car repair services, meticulous diagnostics, and collaborative solutions. Elevate your driving experience with skilled mechanics, advanced technology, and comprehensive vehicle care. Connect with us for seamless automotive solutions, and explore the road with confidence. Your satisfaction is at the core of our service. Choose R-Speed Motors – Your pathway to a reliable and well-maintained vehicles."
         </ParagraphText>
         <ul className="footer__menuList">
           {menu.map((item) => (
@@ -35,11 +29,10 @@ function Footer() {
           ))}
         </ul>
         <ParagraphText className="copyright">
-          1954 Cnr Intakaza & Edmond Shezi Street, Mayibuye, Commercia, Midrand,
-          1685 South Africa
+        4 Spoor Ave, Kempton Park West, Kempton Park, 1619, South Africa
         </ParagraphText>
         <ParagraphText className="copyright">
-          © Stepping Stones Group Internet Cafe (PTY) LTD |{' '}
+          © R-Speed Motors (PTY) LTD |{' '}
           {new Date().getFullYear()}| All rights reserved
         </ParagraphText>
       </div>

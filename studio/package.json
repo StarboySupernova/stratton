@@ -11,9 +11,10 @@
     "build": "sanity build"
   },
   "keywords": [
-    "Stepping Stones",
-    "internet",
-    "technology"
+    "R-Speed Motors",
+    "cars",
+    "technology",
+    "mechanic"
   ],
   "dependencies": {
     "@sanity/base": "^2.25.4",

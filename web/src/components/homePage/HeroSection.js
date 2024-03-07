@@ -12,22 +12,20 @@ function HeroSection() {
       <div className="container">
         <div className="hero__wrapper">
           <div className="left">
-            <h1 className="hero__heading">Stepping Stones Internet Cafe</h1>
+            <h1 className="hero__heading">R-Speed Motors</h1>
             <ParagraphText className="hero__text">
-              Your Gateway to Connectivity and Productivity. Discover high-speed
-              internet, exquisite customer service, printing solutions,
-              collaborative spaces, and expert technical support
+            "Your Pathway to Automotive Excellence. Explore swift and reliable car repair services, exceptional customer care, diagnostic solutions, collaborative expertise, and proficient technical support at R-Speed Motors."
             </ParagraphText>
             <SectionTitle>Our Expertise</SectionTitle>
             <ParagraphText className="hero__text">
-              "Welcome to Stepping Stones Internet Cafe, your gateway to
-              seamless digital connectivity and productivity. Explore our
-              featured services designed to enhance your online experience.
-              Discover a diverse range of offerings tailored to meet your needs,
-              whether for work, study, or leisure. Step into a world of
-              convenience and innovation with Stepping Stones Internet Cafe."
+            "Step into the world of precision automotive services, your pathway to
+              seamless car care and optimal vehicle performance. Explore our
+              featured services crafted to elevate your automotive experience.
+              Uncover a comprehensive array of offerings customized to address your
+              vehicle's needs, be it for maintenance, repairs, or enhancements. Immerse yourself in a realm of
+              reliability and expertise."
             </ParagraphText>
-            <ParagraphText>Where Every Click, Drives You Forward</ParagraphText>
+            <ParagraphText>Where Every Tune-Up, Drives You Forward</ParagraphText>
             <Button to="/spotlight" tag={Link} className="hero__button">
               Explore Our Services
             </Button>
@@ -36,7 +34,7 @@ function HeroSection() {
             <StaticImage
               className="hero__image"
               src="../../images/VR.jpg"
-              alt="stepping stones hero image"
+              alt="R-Speed Motors hero image"
               placeholder="blurred"
               objectPosition="50% 30%"
             />

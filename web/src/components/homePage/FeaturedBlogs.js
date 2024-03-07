@@ -37,12 +37,9 @@ function FeaturedBlogs() {
   const spotlightBlogs = data.allSanitySpotlight.nodes[0].blogs;
   return (
     <FeaturedBlogsStyles>
-      <SectionTitle>Spotlight & Trending Posts</SectionTitle>
+      <SectionTitle>Latest from R-Speed Motors</SectionTitle>
       <ParagraphText className="featuredBlogs__text">
-        {new Date().getDate()}
-        {new Date().getDay()}
-        {new Date().getMonth().toLocaleString()}
-        {new Date().getFullYear()}
+        Check Out our most recent discounts and specials today
       </ParagraphText>
       <BlogGrid blogs={spotlightBlogs} />
     </FeaturedBlogsStyles>

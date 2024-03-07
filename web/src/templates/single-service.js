@@ -29,7 +29,7 @@ function SingleService({ data }) {
     <PageSpace top={80} bottom={100}>
       <SingleCategoryStyles>
         <div className="container">
-          <SEO title={`Stepping Stones-${service.title}`} />
+          <SEO title={`R-Speed Motors - ${service.title}`} />
           <PageHeader title={service.title} className="pageHeader">
             <MyPortableText value={service._rawDescription} />
             <GatsbyImage
