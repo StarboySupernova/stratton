@@ -7,8 +7,8 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   :root{
-    --primary: #4A46EB;
-    --secondary: #753AFF;
+    --primary: #921F1F;
+    --secondary: #E46733;
     --darkBlue: #070747; 
     --darkPurple: #0E0034;
     --black-1: #0D121F;
@@ -27,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     line-height: 1.5;
     width: 100%;
-    font-family: 'Inter';
+    font-family: 'Roboto';
     background: var(--black-1);
     color: var(--white);
   }
