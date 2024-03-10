@@ -28,7 +28,7 @@ function TopCategories() {
     <TopCategoriesStyles>
       <SectionTitle>Top Categories</SectionTitle>
       <ParagraphText>
-        Explore Automotive Excellence: Your journey begins here with us
+        Your futuristic tech journey begins here with us
       </ParagraphText>
       <ServiceGrid services={services} />
     </TopCategoriesStyles>

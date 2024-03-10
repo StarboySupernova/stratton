@@ -12,29 +12,32 @@ function HeroSection() {
       <div className="container">
         <div className="hero__wrapper">
           <div className="left">
-            <h1 className="hero__heading">R-Speed Motors</h1>
+            <h1 className="hero__heading">Stratton Ashworth</h1>
             <ParagraphText className="hero__text">
-            "Your Pathway to Automotive Excellence. Explore swift and reliable car repair services, exceptional customer care, diagnostic solutions, collaborative expertise, and proficient technical support at R-Speed Motors."
+              macOS App Development • iOS/iPad Development • Android App
+              Development • React Progressive Web Apps • Static Web Development
             </ParagraphText>
-            <SectionTitle>Our Expertise</SectionTitle>
+            <SectionTitle>Our Acumen</SectionTitle>
             <ParagraphText className="hero__text">
-            "Step into the world of precision automotive services, your pathway to
-              seamless car care and optimal vehicle performance. Explore our
-              featured services crafted to elevate your automotive experience.
-              Uncover a comprehensive array of offerings customized to address your
-              vehicle's needs, be it for maintenance, repairs, or enhancements. Immerse yourself in a realm of
-              reliability and expertise."
+              "Embark on a journey of innovation with our expert development
+              services. From crafting seamless iOS experiences through SwiftUI &
+              UIKit to unleashing the power of Android app development with
+              JetPack Compose, and revolutionizing the web with React, we bring
+              your ideas to life. Elevate your digital presence with our skilled
+              team, ensuring cutting-edge solutions for every platform.
+              Transform your vision into reality – join us in shaping the future
+              of app and web development."
             </ParagraphText>
-            <ParagraphText>Where Every Tune-Up, Drives You Forward</ParagraphText>
+            <ParagraphText>Exploring the Frontiers of Innovation</ParagraphText>
             <Button to="/spotlight" tag={Link} className="hero__button">
-              Explore Our Services
+              Discover
             </Button>
           </div>
           <div className="right">
             <StaticImage
               className="hero__image"
-              src="../../images/VR.jpg"
-              alt="R-Speed Motors hero image"
+              src="../../images/VisionPro.jpeg"
+              alt="stratton ashworth hero image"
               placeholder="blurred"
               objectPosition="50% 30%"
             />

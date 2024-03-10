@@ -3,9 +3,9 @@ const sanityConfig = require('./sanity-config.js');
 
 module.exports = {
   siteMetadata: {
-    title: `R-Speed Motors`,
-    siteUrl: `https://rspeedmotors.netlify.com`,
-    description: `R-Speed Motors`,
+    title: `Stratton Ashworth`,
+    siteUrl: `https://strattonashworth.netlify.com`,
+    description: `Stratton Ashworth`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

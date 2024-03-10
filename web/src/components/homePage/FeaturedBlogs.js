@@ -37,9 +37,11 @@ function FeaturedBlogs() {
   const spotlightBlogs = data.allSanitySpotlight.nodes[0].blogs;
   return (
     <FeaturedBlogsStyles>
-      <SectionTitle>Latest from R-Speed Motors</SectionTitle>
+      <SectionTitle>Spotlight</SectionTitle>
       <ParagraphText className="featuredBlogs__text">
-        Check Out our most recent discounts and specials today
+        Surf Stratton Ashworth's latest in iOS Development with SwiftUI & UIKit,
+        and Unleashing the Power of React PWAs in Web Development – Stay Updated
+        with Cutting-Edge Tech Insights!
       </ParagraphText>
       <BlogGrid blogs={spotlightBlogs} />
     </FeaturedBlogsStyles>
@@ -47,6 +49,3 @@ function FeaturedBlogs() {
 }
 
 export default FeaturedBlogs;
-
-/// colors
-/// #1ff4b4 - light green, #2c313e - dark bluish, #cbdd46 - gold

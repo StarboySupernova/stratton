@@ -12,7 +12,15 @@ function Footer() {
       <div className="container">
         <Logo />
         <ParagraphText className="footer__text">
-        "Thank you for choosing R-Speed Motors, where your automotive journey is our top priority. Experience excellence in car repair services, meticulous diagnostics, and collaborative solutions. Elevate your driving experience with skilled mechanics, advanced technology, and comprehensive vehicle care. Connect with us for seamless automotive solutions, and explore the road with confidence. Your satisfaction is at the core of our service. Choose R-Speed Motors – Your pathway to a reliable and well-maintained vehicles."
+          "Thank you for choosing us at Stratton Ashworth, where your digital
+          journey is our utmost priority. Experience excellence in iOS
+          development, Android app development, and web development with React.
+          Elevate your digital presence with our skilled team, cutting-edge
+          technology, and collaborative solutions. Connect with us for seamless
+          app and web solutions, and explore the digital landscape with
+          confidence. Your satisfaction is at the heart of our service. Choose
+          Stratton Ashworth – Your pathway to innovative and top-tier digital
+          solutions."
         </ParagraphText>
         <ul className="footer__menuList">
           {menu.map((item) => (
@@ -29,11 +37,11 @@ function Footer() {
           ))}
         </ul>
         <ParagraphText className="copyright">
-        4 Spoor Ave, Kempton Park West, Kempton Park, 1619, South Africa
+          4 Spoor Ave, Kempton Park West, Kempton Park, 1619, South Africa
         </ParagraphText>
         <ParagraphText className="copyright">
-          © R-Speed Motors (PTY) LTD |{' '}
-          {new Date().getFullYear()}| All rights reserved
+          © Stratton Ashworth (PTY) LTD | {new Date().getFullYear()}| All rights
+          reserved
         </ParagraphText>
       </div>
     </FooterStyles>

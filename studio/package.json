@@ -11,10 +11,14 @@
     "build": "sanity build"
   },
   "keywords": [
-    "R-Speed Motors",
-    "cars",
+    "Stratton",
+    "Ashworth",
     "technology",
-    "mechanic"
+    "web",
+    "iOS",
+    "android",
+    "website",
+    "internet"
   ],
   "dependencies": {
     "@sanity/base": "^2.25.4",

@@ -1,11 +1,11 @@
 {
   "root": true,
   "api": {
-    "projectId": "5tfpou3y",
+    "projectId": "vrr8jtjf",
     "dataset": "production"
   },
   "project": {
-    "name": "R-Speed Motors"
+    "name": "Stratton Ashworth"
   },
   "plugins": [
     "@sanity/base",

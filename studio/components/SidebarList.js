@@ -3,7 +3,7 @@ import { MdStar } from 'react-icons/md';
 
 function SidebarList() {
   return S.list()
-    .title('R-Speed Motors')
+    .title('Stratton Ashworth')
     .items([
       S.listItem()
         .title('Spotlight')
