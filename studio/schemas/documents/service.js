@@ -28,6 +28,11 @@ export default {
     {
       name: 'description',
       title: 'Description',
+      type: 'richText',
+    },
+    {
+      name: 'exposition',
+      title: 'Exposition',
       type: 'normalText',
     },
     {
@@ -52,3 +57,5 @@ export default {
     },
   },
 };
+
+// undraw hex blue - #6C63FF
