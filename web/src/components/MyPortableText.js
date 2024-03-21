@@ -22,6 +22,15 @@ const myPortableTextComponents = {
     ),
   },
   types: {
+    customCode: ({ value }) => (
+      <SyntaxHighlighter
+        style={theme}
+        language={value.code.language}
+        className="bodyCode"
+      >
+        {String(value.code.code).replace(/\n$/, '')}
+      </SyntaxHighlighter>
+    ),
     customImage: ({ value }) => {
       const imageData = getImage(value.asset, sanityConfig).asset;
       const { width, height } = getImageDimensions(value);

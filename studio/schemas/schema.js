@@ -14,6 +14,7 @@ import spotlight from './documents/spotlight';
 import richText from './objects/richText';
 import normalText from './objects/normalText';
 import customImage from './objects/customImage';
+import customCode from './objects/customCode';
 
 export default createSchema({
   name: 'default',
@@ -29,5 +30,6 @@ export default createSchema({
     normalText,
     richText,
     customImage,
+    customCode,
   ]),
 });
