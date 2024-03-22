@@ -12,6 +12,11 @@ import { getSanityImageData } from '../utils/getSanityImageData';
 const servicePortableTextComponents = {
   block: {
     normal: ({ children }) => {
+      // Check if children is a string
+      if (typeof children !== 'string') {
+        // Handle the case where children is not a string, for example, render an empty block
+        return null;
+      }
       // Split the text into words
       const words = children.split(' ');
 
