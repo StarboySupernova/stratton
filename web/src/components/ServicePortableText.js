@@ -12,27 +12,30 @@ import { getSanityImageData } from '../utils/getSanityImageData';
 const servicePortableTextComponents = {
   block: {
     normal: ({ children }) => {
-      // Check if children is an array
-      if (!Array.isArray(children)) {
-        // Handle the case where children is not an array, for example, render an empty block
+      // Check if children is not null and is an object
+      if (!children || typeof children !== 'object') {
+        // Handle the case where children is not an object or is null, for example, render an empty block
         return null;
       }
 
-      // Concatenate the text content of all blocks
-      const fullText = children
-        .map((block) => {
-          // Check if the block has text content
-          if (
-            block._type === 'block' &&
-            block.children &&
-            Array.isArray(block.children)
-          ) {
-            // Concatenate the text content of the block
-            return block.children.map((child) => child.text).join(' ');
-          }
-          return '';
-        })
-        .join(' ');
+      // Extract text content from JSON structure
+      const extractTextContent = (data) => {
+        if (Array.isArray(data)) {
+          return data.map((item) => extractTextContent(item)).join(' ');
+        }
+        if (typeof data === 'object' && data !== null) {
+          return Object.values(data)
+            .map((value) => extractTextContent(value))
+            .join(' ');
+        }
+        if (typeof data === 'string') {
+          return data;
+        }
+        return '';
+      };
+
+      // Extract text content from children
+      const fullText = extractTextContent(children);
 
       // Split the full text into words
       const words = fullText.split(' ');
