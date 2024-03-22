@@ -26,7 +26,8 @@ const servicePortableTextComponents = {
         if (typeof data === 'object' && data !== null) {
           // Filter out keys that correspond to node names
           const filteredValues = Object.values(data).filter(
-            (value) => typeof value !== 'object' || !('_type' in value)
+            (value) =>
+              typeof value === 'object' && value !== null && '_type' in value
           );
           return filteredValues
             .map((value) => extractTextContent(value))
