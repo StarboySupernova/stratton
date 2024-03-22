@@ -1,5 +1,5 @@
 import React from 'react';
-import MyPortableText from '../MyPortableText';
+import ServicePortableText from '../ServicePortableText';
 import Button from '../buttons/Button';
 import { buttonTypes } from '../../constants/buttonTypes';
 import { CategoryItemStyles } from '../../styles/category/CategoryItemStyles';
@@ -10,7 +10,7 @@ function ServiceItem({ title, description, slug }) {
     <CategoryItemStyles>
       <Title className="title">{title}</Title>
       <div className="text">
-        <MyPortableText value={description} />
+        <ServicePortableText value={description} />
       </div>
       <Button to={`/services/${slug.current}`} variant={buttonTypes.outline}>
         More

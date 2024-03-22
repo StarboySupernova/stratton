@@ -12,7 +12,7 @@ function Footer() {
       <div className="container">
         <Logo />
         <ParagraphText className="footer__text">
-          "Thank you for choosing us at Stratton Ashworth, where your digital
+          Thank you for choosing us at Stratton Ashworth, where your digital
           journey is our utmost priority. Experience excellence in iOS
           development, Android app development, and web development with React.
           Elevate your digital presence with our skilled team, cutting-edge
@@ -20,7 +20,7 @@ function Footer() {
           app and web solutions, and explore the digital landscape with
           confidence. Your satisfaction is at the heart of our service. Choose
           Stratton Ashworth – Your pathway to innovative and top-tier digital
-          solutions."
+          solutions
         </ParagraphText>
         <ul className="footer__menuList">
           {menu.map((item) => (
