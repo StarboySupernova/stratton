@@ -42,19 +42,16 @@ const servicePortableTextComponents = {
       // Extract text content from children
       const fullText = extractTextContent(children);
 
-      // Split the full text into words
-      const words = fullText.split(' ');
+      // Check if the number of characters exceeds the limit
+      if (fullText.length > 250) {
+        // Slice the text to get the first 250 characters and add an ellipsis
+        const truncatedText = `${fullText.slice(0, 250)}...`;
 
-      // Check if the number of words exceeds the limit
-      if (words.length > 40) {
-        // Slice the array to get the first 40 words and join them back into a string
-        const truncatedText = words.slice(0, 40).join(' ');
-
-        // Add an ellipsis to the truncated text
-        return <ParagraphText>{truncatedText} ...</ParagraphText>;
+        // Render the truncated text
+        return <ParagraphText>{truncatedText}</ParagraphText>;
       }
 
-      // If the number of words is within the limit, render the full text
+      // If the number of characters is within the limit, render the full text
       return <ParagraphText>{fullText}</ParagraphText>;
     },
     h1: ({ children }) => <Title>{children}</Title>,
