@@ -51,12 +51,7 @@ const servicePortableTextComponents = {
         const truncatedText = words.slice(0, 40).join(' ');
 
         // Add an ellipsis to the truncated text
-        return (
-          <>
-            <ParagraphText>{truncatedText}</ParagraphText>
-            <span>...</span>
-          </>
-        );
+        return <ParagraphText>{truncatedText} ...</ParagraphText>;
       }
 
       // If the number of words is within the limit, render the full text
