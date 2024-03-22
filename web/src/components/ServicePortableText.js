@@ -12,13 +12,30 @@ import { getSanityImageData } from '../utils/getSanityImageData';
 const servicePortableTextComponents = {
   block: {
     normal: ({ children }) => {
-      // Check if children is a string
-      if (typeof children !== 'string') {
-        // Handle the case where children is not a string, for example, render an empty block
+      // Check if children is an array
+      if (!Array.isArray(children)) {
+        // Handle the case where children is not an array, for example, render an empty block
         return null;
       }
-      // Split the text into words
-      const words = children.split(' ');
+
+      // Concatenate the text content of all blocks
+      const fullText = children
+        .map((block) => {
+          // Check if the block has text content
+          if (
+            block._type === 'block' &&
+            block.children &&
+            Array.isArray(block.children)
+          ) {
+            // Concatenate the text content of the block
+            return block.children.map((child) => child.text).join(' ');
+          }
+          return '';
+        })
+        .join(' ');
+
+      // Split the full text into words
+      const words = fullText.split(' ');
 
       // Check if the number of words exceeds the limit
       if (words.length > 60) {
@@ -35,7 +52,7 @@ const servicePortableTextComponents = {
       }
 
       // If the number of words is within the limit, render the full text
-      return <ParagraphText>{children}</ParagraphText>;
+      return <ParagraphText>{fullText}</ParagraphText>;
     },
     h1: ({ children }) => <Title>{children}</Title>,
   },
