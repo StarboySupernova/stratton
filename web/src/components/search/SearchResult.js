@@ -4,6 +4,7 @@ import {
   AuthorSearchResultItem,
   BlogSearchResultItem,
   CategorySearchResultItem,
+  ServiceSearchResultItem,
 } from './SearchResultItem';
 import ParagraphText from '../typography/ParagraphText';
 
@@ -12,6 +13,7 @@ function SearchResult({
   blogsIndexStore,
   categoriesIndexStore,
   authorsIndexStore,
+  servicesIndexStore,
 }) {
   const blogsResult = useFlexSearch(
     searchQuery,
@@ -28,11 +30,17 @@ function SearchResult({
     JSON.stringify(authorsIndexStore.index),
     authorsIndexStore.store
   );
+  const servicesResult = useFlexSearch(
+    searchQuery,
+    JSON.stringify(servicesIndexStore.index),
+    servicesIndexStore.store
+  );
 
   if (
     blogsResult.length === 0 &&
     categoriesResult.length === 0 &&
-    authorsResult.length === 0
+    authorsResult.length === 0 &&
+    servicesResult.length === 0
   ) {
     return <ParagraphText>No Result Found.</ParagraphText>;
   }
@@ -41,7 +49,7 @@ function SearchResult({
     <>
       {blogsResult.length > 0 && (
         <>
-          <ParagraphText>Posts</ParagraphText>
+          <ParagraphText>Spotlight</ParagraphText>
           {blogsResult.map((result) => (
             <BlogSearchResultItem key={result.id} blog={result} />
           ))}
@@ -49,7 +57,7 @@ function SearchResult({
       )}
       {categoriesResult.length > 0 && (
         <>
-          <ParagraphText>Our Services</ParagraphText>
+          <ParagraphText>Category</ParagraphText>
           {categoriesResult.map((result) => (
             <CategorySearchResultItem key={result.id} category={result} />
           ))}
@@ -60,6 +68,14 @@ function SearchResult({
           <ParagraphText>Authors</ParagraphText>
           {authorsResult.map((result) => (
             <AuthorSearchResultItem key={result.id} author={result} />
+          ))}
+        </>
+      )}
+      {servicesResult.length > 0 && (
+        <>
+          <ParagraphText>Technologies</ParagraphText>
+          {servicesResult.map((result) => (
+            <ServiceSearchResultItem key={result.id} service={result} />
           ))}
         </>
       )}

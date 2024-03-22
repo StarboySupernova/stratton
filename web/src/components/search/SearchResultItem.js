@@ -57,8 +57,20 @@ function AuthorSearchResultItem({ author }) {
     </SearchResultItemStyles>
   );
 }
+function ServiceSearchResultItem({ service }) {
+  const { closeSearchModal } = useContext(SearchModalContext);
+  return (
+    <SearchResultItemStyles
+      to={`/services/${service.slug.current}`}
+      onClick={() => closeSearchModal()}
+    >
+      <Title className="title">{service.title}</Title>
+    </SearchResultItemStyles>
+  );
+}
 export {
   CategorySearchResultItem,
   BlogSearchResultItem,
   AuthorSearchResultItem,
+  ServiceSearchResultItem,
 };

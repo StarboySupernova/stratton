@@ -23,6 +23,10 @@ const query = graphql`
       publicStoreURL
       publicIndexURL
     }
+    localSearchServices {
+      publicStoreURL
+      publicIndexURL
+    }
   }
 `;
 
@@ -33,6 +37,7 @@ function Search() {
   const [blogsIndexStore, setBlogsIndexStore] = useState(null);
   const [categoriesIndexStore, setCategoriesIndexStore] = useState(null);
   const [authorsIndexStore, setAuthorsIndexStore] = useState(null);
+  const [servicesIndexStore, setServicesIndexStore] = useState(null);
   const data = useStaticQuery(query);
 
   useEffect(() => {
@@ -60,16 +65,29 @@ function Search() {
     publicIndexURL: authorsPublicIndexURL,
   } = data.localSearchAuthors;
 
+  const {
+    publicStoreURL: servicesPublicStoreURL,
+    publicIndexURL: servicesPublicIndexURL,
+  } = data.localSearchServices;
+
   const handleOnFocus = async () => {
-    if (blogsIndexStore && categoriesIndexStore && authorsIndexStore) return;
+    if (
+      blogsIndexStore &&
+      categoriesIndexStore &&
+      authorsIndexStore &&
+      servicesIndexStore
+    )
+      return;
     const [
-      /* destructuring here is giving an alias for the data returned ny Promise.all, and the order matters because they correspond */
+      /* destructuring here is giving an alias for the data returned by Promise.all, and the order matters because they correspond */
       { data: blogsIndex },
       { data: blogsStore },
       { data: categoriesIndex },
       { data: categoriesStore },
       { data: authorsIndex },
       { data: authorsStore },
+      { data: servicesIndex },
+      { data: servicesStore },
     ] = await Promise.all([
       axios.get(`${blogsPublicIndexURL}`),
       axios.get(`${blogsPublicStoreURL}`),
@@ -77,6 +95,8 @@ function Search() {
       axios.get(`${categoriesPublicStoreURL}`),
       axios.get(`${authorsPublicIndexURL}`),
       axios.get(`${authorsPublicStoreURL}`),
+      axios.get(`${servicesPublicIndexURL}`),
+      axios.get(`${servicesPublicStoreURL}`),
     ]);
     /* setting state using data destructured after being received from the Promise */
     setBlogsIndexStore({
@@ -90,6 +110,10 @@ function Search() {
     setAuthorsIndexStore({
       index: authorsIndex,
       store: authorsStore,
+    });
+    setServicesIndexStore({
+      index: servicesIndex,
+      store: servicesStore,
     });
   };
 
@@ -108,13 +132,15 @@ function Search() {
         {searchQuery &&
           blogsIndexStore &&
           categoriesIndexStore &&
-          authorsIndexStore && (
+          authorsIndexStore &&
+          servicesIndexStore(
             <div className="search__result">
               <SearchResult
                 searchQuery={searchQuery}
                 blogsIndexStore={blogsIndexStore}
                 categoriesIndexStore={categoriesIndexStore}
                 authorsIndexStore={authorsIndexStore}
+                servicesIndexStore={servicesIndexStore}
               />
             </div>
           )}
