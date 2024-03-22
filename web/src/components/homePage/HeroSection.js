@@ -17,16 +17,16 @@ function HeroSection() {
               macOS App Development • iOS/iPad Development • Android App
               Development • React Progressive Web Apps • Static Web Development
             </ParagraphText>
-            <SectionTitle>Our Acumen</SectionTitle>
+            <SectionTitle>Our Technologies</SectionTitle>
             <ParagraphText className="hero__text">
-              "Embark on a journey of innovation with our expert development
+              Embark on a journey of innovation with our expert development
               services. From crafting seamless iOS experiences through SwiftUI &
               UIKit to unleashing the power of Android app development with
               JetPack Compose, and revolutionizing the web with React, we bring
               your ideas to life. Elevate your digital presence with our skilled
               team, ensuring cutting-edge solutions for every platform.
               Transform your vision into reality – join us in shaping the future
-              of app and web development."
+              of app and web development.
             </ParagraphText>
             <ParagraphText>Exploring the Frontiers of Innovation</ParagraphText>
             <Button to="/spotlight" tag={Link} className="hero__button">
