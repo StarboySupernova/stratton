@@ -24,7 +24,11 @@ const servicePortableTextComponents = {
           return data.map((item) => extractTextContent(item)).join(' ');
         }
         if (typeof data === 'object' && data !== null) {
-          return Object.values(data)
+          // Filter out keys that correspond to node names
+          const filteredValues = Object.values(data).filter(
+            (value) => typeof value !== 'object' || !('_type' in value)
+          );
+          return filteredValues
             .map((value) => extractTextContent(value))
             .join(' ');
         }
@@ -41,9 +45,9 @@ const servicePortableTextComponents = {
       const words = fullText.split(' ');
 
       // Check if the number of words exceeds the limit
-      if (words.length > 60) {
-        // Slice the array to get the first 60 words and join them back into a string
-        const truncatedText = words.slice(0, 60).join(' ');
+      if (words.length > 40) {
+        // Slice the array to get the first 40 words and join them back into a string
+        const truncatedText = words.slice(0, 40).join(' ');
 
         // Add an ellipsis to the truncated text
         return (
