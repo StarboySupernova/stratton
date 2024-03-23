@@ -26,7 +26,7 @@ function TopCategories() {
   const categories = data.allSanitySpotlight.nodes[0].category;
   return (
     <TopCategoriesStyles>
-      <SectionTitle>Top Categories</SectionTitle>
+      <SectionTitle>Top Core Services</SectionTitle>
       <ParagraphText>
         Your futuristic tech journey begins here with us
       </ParagraphText>
