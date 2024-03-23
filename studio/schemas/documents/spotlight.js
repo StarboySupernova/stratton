@@ -28,12 +28,12 @@ export default {
     },
     {
       name: 'category',
-      title: 'Top Services',
+      title: 'Core Services',
       type: 'array',
       of: [
         {
           type: 'reference',
-          to: [{ type: 'service' }],
+          to: [{ type: 'category' }],
         },
       ],
       validation: (Rule) => [

@@ -29,14 +29,18 @@ function HeroSection() {
               of app and web development.
             </ParagraphText>
             <ParagraphText>Exploring the Frontiers of Innovation</ParagraphText>
-            <Button to="/spotlight" tag={Link} className="hero__button">
+            <Button
+              to="/categories/ios-development"
+              tag={Link}
+              className="hero__button"
+            >
               Discover
             </Button>
           </div>
           <div className="right">
             <StaticImage
               className="hero__image"
-              src="../../images/VisionPro.jpeg"
+              src="../../images/neumorphic.png"
               alt="stratton ashworth hero image"
               placeholder="blurred"
               objectPosition="50% 30%"
