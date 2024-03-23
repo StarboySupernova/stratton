@@ -43,11 +43,11 @@ function Blogs({ data, pageContext }) {
 
   return (
     <>
-      <SEO title="Posts" />
+      <SEO title="Spotlight" />
       <PageSpace top={80} bottom={100}>
         <div className="container">
           <PageHeader
-            title="All Posts"
+            title="Spotlight"
             description="A timeline of our dedication to full client satisfaction"
           />
           <BlogGrid blogs={blogs} />

@@ -31,11 +31,11 @@ function Categories({ data, pageContext }) {
 
   return (
     <>
-      <SEO title="Categories" />
+      <SEO title="Core Categories" />
       <PageSpace top={80} bottom={100}>
         <div className="container">
           <PageHeader
-            title="All Categories"
+            title="Core Categories"
             description="Tailored service, designed & implemented with the client in mind"
           />
           <CategoryGrid categories={categories} />
