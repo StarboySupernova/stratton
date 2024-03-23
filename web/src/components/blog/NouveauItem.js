@@ -33,7 +33,7 @@ function NouveauItem({ path, title, image, categories, publishedAt }) {
         <ParagraphText className="categoriesText">
           {categories.map((item, index) => (
             <span key={item.slug.current}>
-              <Link to={`/categories/${item.slug.current}`}>{item.title}</Link>
+              <Link to={`/spotlight/${path}`}>{item.title}</Link>
               {index < categories.length - 1 ? ', ' : ''}
             </span>
           ))}
