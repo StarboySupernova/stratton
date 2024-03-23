@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import BlogGrid from '../components/blog/BlogGrid';
+import NouveauGrid from '../components/blog/NouveauGrid';
 import MyPortableText from '../components/MyPortableText';
 import PageSpace from '../components/PageSpace';
 import SEO from '../components/seo';
@@ -65,7 +65,7 @@ function SingleAuthor({ data }) {
             </div>
           </div>
           <hr className="hr" />
-          <BlogGrid blogs={blogs} />
+          <NouveauGrid blogs={blogs} />
         </SingleAuthorStyles>
       </div>
     </PageSpace>

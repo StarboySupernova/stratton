@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 import React from 'react';
 import {
   BackgroundBlogDiv,
-  BlogItemStyles,
+  NouveauItemStyles,
   ContainerDiv,
 } from '../../styles/blog/BlogItemStyles';
 import ParagraphText from '../typography/ParagraphText';
@@ -14,7 +14,7 @@ function NouveauItem({ path, title, image, categories, publishedAt }) {
   return (
     <ContainerDiv>
       <BackgroundBlogDiv />
-      <BlogItemStyles>
+      <NouveauItemStyles>
         <Link to={`/spotlight/${path}`}>
           <GatsbyImage
             image={image.imageData}
@@ -38,7 +38,7 @@ function NouveauItem({ path, title, image, categories, publishedAt }) {
             </span>
           ))}
         </ParagraphText>
-      </BlogItemStyles>
+      </NouveauItemStyles>
     </ContainerDiv>
   );
 }

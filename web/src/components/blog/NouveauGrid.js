@@ -1,13 +1,13 @@
 import React from 'react';
 import { BlogGridStyles } from '../../styles/blog/BlogGridStyles';
-import BlogItem from './BlogItem';
+import NouveauItem from './NouveauItem';
 
 function NouveauGrid({ blogs }) {
   return (
     <BlogGridStyles>
       {blogs &&
         blogs.map((blog) => (
-          <BlogItem
+          <NouveauItem
             key={blog.id}
             path={blog.slug.current}
             title={blog.title}
