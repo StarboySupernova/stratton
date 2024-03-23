@@ -1,6 +1,6 @@
 export const menu = [
   {
-    title: '🏠',
+    title: 'Home',
     path: '/',
   },
   {
@@ -10,10 +10,6 @@ export const menu = [
   {
     title: 'Our Tech Stack',
     path: '/tech',
-  },
-  {
-    title: 'Categories',
-    path: '/team',
   },
   {
     title: 'Our Team',
