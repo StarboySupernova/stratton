@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { TopCategoriesStyles } from '../../styles/homePage/TopCategoriesStyles';
 // import CategoryGrid from '../category/CategoryGrid';
-import ServiceGrid from '../category/ServiceGrid';
+import CategoryGrid from '../category/CategoryGrid';
 import ParagraphText from '../typography/ParagraphText';
 import { SectionTitle } from '../typography/Title';
 
@@ -23,14 +23,14 @@ function TopCategories() {
       }
     }
   `);
-  const services = data.allSanitySpotlight.nodes[0].category;
+  const categories = data.allSanitySpotlight.nodes[0].category;
   return (
     <TopCategoriesStyles>
       <SectionTitle>Top Categories</SectionTitle>
       <ParagraphText>
         Your futuristic tech journey begins here with us
       </ParagraphText>
-      <ServiceGrid services={services} />
+      <CategoryGrid categories={categories} />
     </TopCategoriesStyles>
   );
 }
