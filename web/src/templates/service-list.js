@@ -31,11 +31,11 @@ function Services({ data, pageContext }) {
 
   return (
     <>
-      <SEO title="Services" />
+      <SEO title="Tech Stack" />
       <PageSpace top={80} bottom={100}>
         <div className="container">
           <PageHeader
-            title="All Services"
+            title="Our Tech Stack"
             description="Elevate your online journey with us. Connect, create, and thrive in a digital world. Your success, our priority."
           />
           <ServiceGrid services={services} />
@@ -43,7 +43,7 @@ function Services({ data, pageContext }) {
             <Pagination
               currentPage={currentPage}
               numberOfPages={numberOfPages}
-              baseURL="/services"
+              baseURL="/tech"
             />
           )}
         </div>

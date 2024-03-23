@@ -45,7 +45,7 @@ const servicePortableTextComponents = {
       // Check if the number of characters exceeds the limit
       if (fullText.length > 250) {
         // Slice the text to get the first 250 characters and add an ellipsis
-        const truncatedText = `${fullText.slice(0, 250)}...`;
+        const truncatedText = `${fullText.slice(0, 250)} ...`;
 
         // Render the truncated text
         return <ParagraphText>{truncatedText}</ParagraphText>;

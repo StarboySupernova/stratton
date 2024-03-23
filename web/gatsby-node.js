@@ -96,7 +96,7 @@ exports.createPages = async ({ graphql, actions }) => {
   //  creating single service pages
   services.forEach((service) => {
     createPage({
-      path: `/services/${service.slug.current}`,
+      path: `/tech/${service.slug.current}`,
       component: singleServiceTemplate,
       context: { id: service.id },
     });
@@ -151,7 +151,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const totalServiceListPages = Math.ceil(services.length / 7);
   Array.from({ length: totalServiceListPages }).forEach((_, index) => {
     createPage({
-      path: index === 0 ? `/services` : `/services/${index + 1}`,
+      path: index === 0 ? `/tech` : `/tech/${index + 1}`,
       component: serviceListTemplate,
       context: {
         limit: 7,

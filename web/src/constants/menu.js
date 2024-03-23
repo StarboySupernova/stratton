@@ -1,15 +1,19 @@
 export const menu = [
   {
-    title: 'Home',
+    title: '🏠',
     path: '/',
   },
   {
-    title: 'Posts',
+    title: 'Spotlight',
     path: '/spotlight',
   },
   {
-    title: 'Our Services',
-    path: '/categories',
+    title: 'Our Tech Stack',
+    path: '/tech',
+  },
+  {
+    title: 'Categories',
+    path: '/team',
   },
   {
     title: 'Our Team',

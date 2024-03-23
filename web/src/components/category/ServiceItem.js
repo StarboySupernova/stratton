@@ -12,7 +12,7 @@ function ServiceItem({ title, description, slug }) {
       <div className="text">
         <ServicePortableText value={description} />
       </div>
-      <Button to={`/services/${slug.current}`} variant={buttonTypes.outline}>
+      <Button to={`/tech/${slug.current}`} variant={buttonTypes.outline}>
         More
       </Button>
     </CategoryItemStyles>
