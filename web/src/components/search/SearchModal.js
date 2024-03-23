@@ -39,6 +39,7 @@ function Search() {
   const [authorsIndexStore, setAuthorsIndexStore] = useState(null);
   const [servicesIndexStore, setServicesIndexStore] = useState(null);
   const data = useStaticQuery(query);
+  console.log(data);
 
   useEffect(() => {
     if (isSearchModalOpen) {
@@ -133,7 +134,7 @@ function Search() {
           blogsIndexStore &&
           categoriesIndexStore &&
           authorsIndexStore &&
-          servicesIndexStore(
+          servicesIndexStore && (
             <div className="search__result">
               <SearchResult
                 searchQuery={searchQuery}
