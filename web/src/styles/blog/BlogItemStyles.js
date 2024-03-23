@@ -16,7 +16,6 @@ export const BlogItemStyles = styled.div`
   }
   .publishedAt {
     margin-bottom: 0.3rem;
-    color: var(--darkBlue);
   }
   &:hover {
     .img [data-main-image] {
@@ -25,7 +24,7 @@ export const BlogItemStyles = styled.div`
   }
   .categoriesText {
     a {
-      color: var(--white);
+      color: var(--gray);
       &:hover {
         text-decoration: underline;
       }
